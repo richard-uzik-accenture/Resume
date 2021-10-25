@@ -1,0 +1,60 @@
+.header__box {
+    border-bottom: 1.5px solid currentColor;
+    position: relative;
+    z-index: 1;
+    cursor: default;
+    padding: 0 2rem;
+
+    &--primary {
+        animation: fade-left 0.75s ease-out;
+        transition: all 0.35s;
+    }
+
+    &--secondary {
+        animation: fade-right 0.75s ease-out;
+        transition: all 0.35s;
+    }
+
+    &:hover {
+        background-color: rgba(#aaa, 0.15);
+        transform: scale(1.1) rotate(-5deg);
+        box-shadow: 0 2rem 6rem rgba(#000, 0.4);
+    }
+}
+
+.btn-transparent {
+    &:link,
+    &:visited {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-underline-offset: .5rem;
+        padding: 1rem 2rem;
+        color: currentColor;
+        display: inline-block;
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: all 0.2s;
+        position: relative;
+        z-index: 100;
+    }
+
+    &:hover {
+        background-color: rgba(#aaa, 0.15);
+        transform: scale(1.2) rotate(5deg);
+        box-shadow: 0 1rem 2rem rgba(#000, 0.4);
+    }
+
+    &:active {
+        outline: none;
+        transform: scale(1.2) rotate(5deg) translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
+    }
+}
+
+.btn {
+    &--animated {
+        animation: fadu-up 0.75s ease-out;
+    }
+}

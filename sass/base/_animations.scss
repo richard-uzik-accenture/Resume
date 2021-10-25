@@ -1,0 +1,50 @@
+@keyframes fade-left {
+    0%{
+        opacity: 0;
+        transform: translateX(-50rem) scale(.75);
+    }
+
+    50%{
+        opacity: 0.25;
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0rem) scale(1);
+    }
+}
+
+@keyframes fade-right {
+    0%{
+        opacity: 0;
+        transform: translateX(50rem) scale(.75);
+    }
+
+    50%{
+        opacity: 0.25;
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0rem) scale(1);
+    }
+}
+
+
+@keyframes fadu-up {
+
+    0%{
+        opacity: 0;
+        transform: translateY(5rem);
+    }
+
+    50%{
+        opacity: 0.45;
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+    
+}

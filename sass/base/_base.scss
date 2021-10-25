@@ -1,0 +1,44 @@
+:root{
+
+    --color-primary-light: #00AABD;
+    --color-primary-light-o: #00AABDBB;
+
+    --color-primary: #0085BD;
+    --color-primary-o: #0085BDBB;
+
+    --color-primary-dark:#145DA0;
+    --color-primary-dark-o:#145DA0BB;
+
+    --color-secondary: #00CCA4;
+    --color-tertiary: #DAA21B;
+
+    --color-white:#fff;
+    --color-grey-light:#bbb;
+    --color-grey-dark:rgb(80, 80, 80);
+    --color-black:#000;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;   //1rem = 10px, 10px / 16px = 0.625
+}
+
+body{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 3.5rem;
+}
