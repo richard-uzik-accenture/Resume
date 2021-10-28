@@ -1,13 +1,13 @@
-name: Static Website PROD CI
+name: Static Website Test CI
 
 on:
     push:
-        branches: [ master ]
+        branches: [ development ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: Production
+    environment: Test
     steps:
     - uses: actions/checkout@v2
     - uses: azure/login@v1
