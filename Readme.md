@@ -30,5 +30,5 @@ Visit [Trello](https://trello.com/b/G4SHVeE4/resume-board) called Resume Board.
 * Azure CDN endpoint for Static website : [https://richarduzik-resume.azureedge.net](https://richarduzik-resume.azureedge.net)
 
 **Test** environment is available either by
-* direct URL to Static website in Storage account : tbd
-* Azure CDN endpoint for Static website : tbd
+* direct URL to Static website in Storage account : [https://rsmtstst.z16.web.core.windows.net](https://rsmtstst.z16.web.core.windows.net)
+* Azure CDN endpoint for Static website : [https://richarduzik-resume-test.azureedge.net](https://richarduzik-resume-test.azureedge.net)

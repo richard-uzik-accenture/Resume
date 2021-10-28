@@ -27,8 +27,18 @@ jobs:
         inlineScript: |
            az cdn endpoint purge --content-paths  "/*" --profile-name ${{ secrets.AZURE_CDN_PROFILE_NAME }} --name ${{ secrets.AZURE_CDN_ENDPOINT }} --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }}
 
-  # Azure logout
-    - name: logout
+    - name: Logout Azure
       run: |
             az logout
       if: always()
+
+    - name: Send push notification
+    id: pushnotifier
+    uses: bluefirex/pushnotifier-send-action
+    with:
+      api-token: ${{ secrets.PUSHNOTIFIER_API_TOKEN }}
+      app-token: ${{ secrets.PUSHNOTIFIER_APP_TOKEN }}
+      package: com.github.resume
+      device-ids: ElNN
+      notification: CI action for Resume application to Production completed!
+      url: https://github.com/richard-uzik-accenture/Resume
