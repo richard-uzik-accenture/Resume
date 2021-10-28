@@ -1,4 +1,5 @@
 # My Resume
+
 ## Branching
 **During develoment phase we work in development branch, no need for feature branches!**
 1. Create a new feature branch from based on development. Name of the branch should be follow this naming convention : 
@@ -13,10 +14,21 @@
     * Just some manual testing of responsivity and basic functionality
 8. Create pull request to master
 9. Check if Github workflow succesfully deployed new version to Azure
+
 ## Testing
 TODO
+
 ## Trello
 Visit [Trello](https://trello.com/b/G4SHVeE4/resume-board) called Resume Board.
 1. Always create atomic small tasks
 2. Track new ideas into tasks immediately
 3. Resolve / update tasks as soon as they are finished
+
+## Environments
+**Production** environment is available either by
+* direct URL to Static website in Storage account : [https://rsmprdst.z16.web.core.windows.net](https://rsmprdst.z16.web.core.windows.net)
+* Azure CDN endpoint for Static website : [https://richarduzik-resume.azureedge.net](https://richarduzik-resume.azureedge.net)
+
+**Test** environment is available either by
+* direct URL to Static website in Storage account : tbd
+* Azure CDN endpoint for Static website : tbd
