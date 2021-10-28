@@ -16,7 +16,7 @@
 9. Check if Github workflow succesfully deployed new version to Azure
 
 ## Testing
-TODO
+TODO 
 
 ## Trello
 Visit [Trello](https://trello.com/b/G4SHVeE4/resume-board) called Resume Board.
