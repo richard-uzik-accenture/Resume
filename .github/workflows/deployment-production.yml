@@ -11,7 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: azure/login@v1
-    - uses: bluefirex/pushnotifier-send-action@v1.0.1
       with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
@@ -34,12 +33,12 @@ jobs:
       if: always()
 
     - name: Send push notification
-    id: pushnotifier
-    uses: bluefirex/pushnotifier-send-action@v1.0.1
-    with:
-      api-token: ${{ secrets.PUSHNOTIFIER_API_TOKEN }}
-      app-token: ${{ secrets.PUSHNOTIFIER_APP_TOKEN }}
-      package: com.github.resume
-      device-ids: ElNN
-      notification: CI action for Resume application to Production completed!
-      url: https://github.com/richard-uzik-accenture/Resume
+      id: pushnotifier
+      uses: bluefirex/pushnotifier-send-action@v1.0.1
+      with:
+        api-token: ${{ secrets.PUSHNOTIFIER_API_TOKEN }}
+        app-token: ${{ secrets.PUSHNOTIFIER_APP_TOKEN }}
+        package: com.github.resume
+        device-ids: ElNN
+        notification: CI action for Resume application to Production completed!
+        url: https://github.com/richard-uzik-accenture/Resume
