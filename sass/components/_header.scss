@@ -1,0 +1,23 @@
+.header__box {
+    border-bottom: 1.5px solid currentColor;
+    position: relative;
+    z-index: 1;
+    cursor: default;
+    padding: 0 2rem;
+
+    &--primary {
+        animation: fade-left 0.75s ease-out;
+        transition: all 0.35s;
+    }
+
+    &--secondary {
+        animation: fade-right 0.75s ease-out;
+        transition: all 0.35s;
+    }
+
+    &:hover {
+        background-color: rgba(#aaa, 0.15);
+        transform: scale(1.1) rotate(-5deg);
+        box-shadow: 0 2rem 6rem rgba(#000, 0.4);
+    }
+}
