@@ -1,0 +1,25 @@
+.error-content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 30vh;
+    margin-left: 20rem;
+}
+
+
+.maintenance{    
+    color: var(--color-grey-dark);
+
+    &__heading{
+        font-size: 5rem;
+        font-weight: 300;
+        letter-spacing: .3rem;
+        border-bottom: 1px solid currentColor;
+    }
+
+    &__text{
+        font-size: 2rem;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+    }
+}
