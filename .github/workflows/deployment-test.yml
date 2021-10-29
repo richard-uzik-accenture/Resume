@@ -32,13 +32,13 @@ jobs:
             az logout
       if: always()
 
-    - name: Send push notification
-      id: pushnotifier
-      uses: bluefirex/pushnotifier-send-action@v1.0.1
-      with:
-        api-token: ${{ secrets.PUSHNOTIFIER_API_TOKEN }}
-        app-token: ${{ secrets.PUSHNOTIFIER_APP_TOKEN }}
-        package: com.github.resume
-        device-ids: ElNN
-        notification: CI action for Resume application to Test completed!
-        url: https://github.com/richard-uzik-accenture/Resume
+#    - name: Send push notification
+#      id: pushnotifier
+#      uses: bluefirex/pushnotifier-send-action@v1.0.1
+#      with:
+#        api-token: ${{ secrets.PUSHNOTIFIER_API_TOKEN }}
+#        app-token: ${{ secrets.PUSHNOTIFIER_APP_TOKEN }}
+#        package: com.github.resume
+#        device-ids: ElNN
+#        notification: CI action for Resume application to Test completed!
+#        url: https://github.com/richard-uzik-accenture/Resume
