@@ -13,7 +13,7 @@
 
     &:hover{
         box-shadow: 0 1.5rem 6rem rgba(0, 0, 0, 0.65);
-        transform: scale(1.03) skewX(-7deg);
+        transform: scale(1.05) skewX(-7deg);
     }
 
     &--1{
@@ -84,14 +84,13 @@
         text-underline-offset: 4px;
         letter-spacing: 0.5rem;
 
-        // transform: skewX(7deg);
         padding: 0.75rem 2rem;
         transition: all .2s;
         border-radius: 10rem;
     }
 
     &__link:hover{
-        transform: scale(1.25);
         background-color: rgba(#fff, .2);
+        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.25);
     }
 }
