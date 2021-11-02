@@ -43,8 +43,13 @@
     }
 }
 
-.the-top{
-    position: absolute;
-    top: 0;
-    left: 0;   
+.navigation__cards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 4rem 0;
+    min-height: 80vh;
+    background-color: var(--color-gry-light-1);
+    margin-top: -3.5rem;
 }

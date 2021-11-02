@@ -4,46 +4,71 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>This is me...</title>
-        
+
         <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
 
         <!-- Google fonts -->
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" as="style">
-        <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+        <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap"
+            as="style"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap"
+            rel="stylesheet"
+        />
 
         <!-- Main CSS file -->
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-        <div class="the-top" id="the-top"></div>
 
         <header class="header">
             <div class="header__box header__box--primary">
-                <h1 class="header__heading header__heading--primary">
-                        My name is Richard
-                </h1>
+                <h1 class="header__heading header__heading--primary">My name is Richard</h1>
             </div>
             <div class="header__box header__box--secondary">
-                <h1 class="header__heading header__heading--secondary">
-                        Full Stack Developer
-                </h1>
+                <h1 class="header__heading header__heading--secondary">Full Stack Developer</h1>
             </div>
             <a href="#page-content" class="btn-transparent btn--animated u-mt-medium">Check me out &rarr;</a>
         </header>
 
         <div class="return">
-            <a href="#the-top">
+            <a href="#">
                 <svg class="return__icon"><use xlink:href="assets/sprites.svg#icon-home"></use></svg>
             </a>
         </div>
 
         <main class="page-content" id="page-content">
-            
-        </main>
 
+            <section class="navigation__cards">
+                <div class="card card--1">
+                    <div class="card__background card__background--1">
+                        <h1 class="card__heading">Education</h1>
+                        <a href="#" class="card__link u-mt-micro">Go</a>
+                    </div>
+                    <img src="/assets/cropped-education.jpg" alt="Education Image" class="card__image" />
+                </div>
+                <div class="card card--2">
+                    <div class="card__background card__background--2">
+                        <h1 class="card__heading">Experience</h1>
+                        <a href="#" class="card__link u-mt-micro">Go</a>
+                    </div>
+                    <img src="/assets/cropped-experience.jpg" alt="Experience Image" class="card__image" />
+                </div>
+                <div class="card card--3">
+                    <div class="card__background card__background--3">
+                        <h1 class="card__heading">Skills</h1>
+                        <a href="#" class="card__link u-mt-micro">Go</a>
+                    </div>
+                    <img src="/assets/cropped-skills.jpg" alt="Skills Image" class="card__image" />
+                </div>
+            </section>
+
+        </main>
     </body>
 </html>

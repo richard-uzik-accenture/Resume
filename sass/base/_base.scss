@@ -2,18 +2,26 @@
 
     --color-primary-light: #00AABD;
     --color-primary-light-o: #00AABDBB;
+    --color-primary-light-rgb: 0, 170, 189;
 
     --color-primary: #0085BD;
     --color-primary-o: #0085BDBB;
+    --color-primary-rgb: 0, 133, 189;
 
     --color-primary-dark:#145DA0;
     --color-primary-dark-o:#145DA0BB;
+    --color-primary-dark-rgb: 11, 55, 94;
 
     --color-secondary: #00CCA4;
+    --color-sceondary-dark: #1b5247;
+    --color-secondary-rgb: 0, 204, 164;
+
     --color-tertiary: #DAA21B;
+    --color-tertiary-rgb: 218, 162, 27;
 
     --color-white:#fff;
-    --color-grey-light:#bbb;
+    --color-gry-light-1: #f7f7f7;
+    --color-grey-light-2:#bbb;
     --color-grey-dark:rgb(80, 80, 80);
     --color-black:#000;
 
@@ -42,5 +50,4 @@ body{
     line-height: 1.6;
     min-height: 100vh;
     padding: 3.5rem;
-    position: relative;
 }
