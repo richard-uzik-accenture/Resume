@@ -20,11 +20,13 @@
     --color-tertiary-rgb: 218, 162, 27;
 
     --color-white:#fff;
-    --color-gry-light-1: #f7f7f7;
+    --color-grey-light-1: #f7f7f7;
     --color-grey-light-2:#bbb;
     --color-grey-dark:rgb(80, 80, 80);
     --color-black:#000;
 
+    --default-radius: 1rem;
+    --large-radius: 2rem;
 }
 
 * {
