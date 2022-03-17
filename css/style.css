@@ -49,10 +49,12 @@
   --color-white-o:rgba(255, 255, 255, 0.9);
   --color-grey-light-1: #f7f7f7;
   --color-grey-light-2:#bbb;
+  --color-grey-light-2-o:rgba(187, 187, 187, 0.486);
   --color-grey-dark:rgb(80, 80, 80);
   --color-grey-dark-o:rgba(80, 80, 80, 0.75);
   --color-dark-ultra:rgb(32, 32, 32);
   --color-black:#000;
+  --default-small: .5rem;
   --default-radius: 1rem;
   --large-radius: 2rem; }
 
@@ -393,7 +395,6 @@ body {
   padding: 3.5rem;
   flex-wrap: wrap;
   position: relative;
-  min-height: 70rem;
   background-image: linear-gradient(to bottom, var(--color-white) 0%, var(--color-white-o) 10%, rgba(255, 255, 255, 0.7) 50%, var(--color-white-o) 90%, var(--color-white) 100%), url("../assets/laptop.jpg");
   background-position: bottom;
   background-size: cover;
@@ -405,7 +406,14 @@ body {
     letter-spacing: 1.25rem;
     transition: all .2s;
     z-index: 1;
-    border-bottom: .25rem solid currentColor; }
+    border-width: .25rem;
+    border-style: solid;
+    border-image: linear-gradient(to right, #0a355c, #145da0, #00aabd, rgba(0, 0, 0, 0)) 1 0;
+    border-top: 0;
+    background-image: linear-gradient(to right, #0a355c, #145da0, #00aabd);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
     .skills__heading:hover {
       transform: translateY(-1.5rem) scale(1.15); }
   .skills__main {
@@ -416,15 +424,16 @@ body {
   .skills__box {
     background-color: rgba(80, 80, 80, 0.16);
     border-radius: var(--large-radius);
-    margin-top: 3.5rem;
+    margin-top: 7rem;
     padding: 4rem 7rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
     z-index: 1;
-    cursor: pointer;
-    transition: all .35s; }
+    cursor: default;
+    transition: all .35s;
+    color: var(--color-primary-ultra); }
     .skills__box:hover {
       box-shadow: 0 4rem 5rem rgba(0, 0, 0, 0.25);
       background-color: rgba(80, 80, 80, 0.25); }
@@ -438,17 +447,23 @@ body {
       font-weight: 500;
       list-style: none;
       position: relative;
-      padding: 0 0 0 1.85rem; }
+      padding: 0.5rem 0.5rem 0.5rem 2.0rem;
+      transition: transform .2s ease; }
       .skills__box__item::before {
         content: "";
         position: absolute;
         left: 0;
-        top: 1.2rem;
+        top: 1.7rem;
         height: .7rem;
         width: .7rem;
         border: 1px solid currentColor;
         border-width: .2rem .2rem 0 0;
         transform: rotate(45deg); }
+      .skills__box__item:hover {
+        background-color: rgba(170, 170, 170, 0.15);
+        transform: scale(1.15);
+        box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.4);
+        border-radius: var(--default-small); }
 
 .error-content {
   display: flex;

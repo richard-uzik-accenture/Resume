@@ -8,7 +8,6 @@
     padding: 3.5rem;
     flex-wrap: wrap;
     position: relative;
-    min-height: 70rem;
 
     background-image: 
         linear-gradient(
@@ -31,7 +30,29 @@
         letter-spacing: 1.25rem;
         transition: all .2s;
         z-index: 1;
-        border-bottom: .25rem solid currentColor;
+        // border-bottom: .25rem solid currentColor;
+        border-width: .25rem;
+        border-style: solid;
+        border-image: 
+            linear-gradient(
+                to right, 
+                #0a355c,
+                #145da0, 
+                #00aabd,
+                rgba(0, 0, 0, 0)
+            ) 1 0;
+            border-top:0;
+        
+
+        background-image: linear-gradient(
+            to right,
+            #0a355c,
+            #145da0, 
+            #00aabd
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 
         &:hover{
             transform: translateY(-1.5rem) scale(1.15);
@@ -48,15 +69,16 @@
     &__box{
         background-color: rgba(80, 80, 80, 0.16);
         border-radius: var(--large-radius);
-        margin-top: 3.5rem;
+        margin-top: 7rem;
         padding: 4rem 7rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         box-shadow: 0 2rem 4rem rgba(0, 0, 0, .25);
         z-index: 1;
-        cursor: pointer;
+        cursor: default;
         transition: all .35s;
+        color: var(--color-primary-ultra);
 
         &:hover{
             box-shadow: 0 4rem 5rem rgba(0, 0, 0, .25);
@@ -77,18 +99,26 @@
             font-weight: 500;
             list-style: none;
             position: relative;
-            padding: 0 0 0 1.85rem;
+            padding: 0.5rem 0.5rem 0.5rem 2.0rem;
+            transition: transform .2s ease;
 
             &::before{
                 content: "";
                 position: absolute;
                 left: 0;
-                top: 1.2rem;
+                top: 1.7rem;
                 height: .7rem;
                 width: .7rem;
                 border: 1px solid currentColor;
                 border-width: .2rem .2rem 0 0;
                 transform: rotate(45deg);
+            }
+
+            &:hover{
+                background-color: rgba(#aaa, 0.15);
+                transform: scale(1.15);
+                box-shadow: 0 2rem 6rem rgba(#000, 0.4);
+                border-radius: var(--default-small);
             }
         }
     }
