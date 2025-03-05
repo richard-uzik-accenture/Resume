@@ -7,6 +7,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PUSHCUT_URL: "https://api.pushcut.io/lblDlfLL7QZ9L6IztVfwA/notifications/Github"
+      PUSHCUT_API_KEY: ${{ secrets.PUSHCUT_API_KEY }}
+
     environment: Test
     steps:
     - uses: actions/checkout@v2
@@ -37,13 +41,9 @@ jobs:
             az logout
       if: always()
 
-#    - name: Send push notification
-#      id: pushnotifier
-#      uses: bluefirex/pushnotifier-send-action@v1.0.1
-#      with:
-#        api-token: ${{ secrets.PUSHNOTIFIER_API_TOKEN }}
-#        app-token: ${{ secrets.PUSHNOTIFIER_APP_TOKEN }}
-#        package: com.github.resume
-#        device-ids: ElNN
-#        notification: CI action for Resume application to Test completed!
-#        url: https://github.com/richard-uzik-accenture/Resume
+    - name: Send Pushcut Notification
+      run: |
+        curl -X POST ${{ env.PUSHCUT_URL }} \
+        -H "Authorization: Bearer ${{ secrets.PUSHCUT_API_KEY }}" \
+        -d "event=GitHub Action Completed" \
+        -d "message=Your workflow '${{ github.workflow }}' has finished!"
