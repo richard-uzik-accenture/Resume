@@ -14,11 +14,18 @@ jobs:
       with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+    - name: Delete existing files in $web
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az storage blob delete-batch --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} --auth-mode key -s '$web'
+
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} --auth-mode key -d '$web' -s .
+          az storage blob upload-batch --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} --auth-mode key -d '$web' -s . --overwrite true
+
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
