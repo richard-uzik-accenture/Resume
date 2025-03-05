@@ -58,13 +58,15 @@
                 justify-content: flex-end;
                 font-size: 4.5rem;
 
-                .row-content {
-                    transition: all .2s;
-                    cursor: pointer;
-
-                    &:hover{
-                        transform: scale(1.2);
-                        box-shadow: 0 2rem 5rem rgba(#000, .25);
+                &:not(.reversed-date){
+                    .row-content {
+                        transition: all .2s;
+                        cursor: pointer;
+    
+                        &:hover{
+                            transform: scale(1.2) translateX(-2rem);
+                            box-shadow: 0 2rem 5rem rgba(#000, .25);
+                        }
                     }
                 }
             }
@@ -85,6 +87,18 @@
                     top: 50%;
                     left: -0.55rem;
                     transform: translateY(-50%);
+                }
+            }
+
+            &--content.reversed-content {
+                .row-content {
+                    transition: all .2s;
+                    cursor: pointer;
+
+                    &:hover{
+                        transform: scale(1.2) translateX(2rem);
+                        box-shadow: 0 2rem 5rem rgba(#000, .25);
+                    }
                 }
             }
         }
