@@ -7,28 +7,41 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PUSHCUT_URL: "https://api.pushcut.io/lblDlfLL7QZ9L6IztVfwA/notifications/Github"
+      PUSHCUT_API_KEY: ${{ secrets.PUSHCUT_API_KEY }}
+
     environment: Test
     steps:
     - uses: actions/checkout@v2
-    - uses: azure/login@v1
+    - uses: azure/login@v2
       with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Delete existing files in $web
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az storage blob delete-batch --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} --auth-mode key -s '$web'
 
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.0.72
         inlineScript: |
-            az storage blob upload-batch --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} --auth-mode key -d '$web' -s .
+          az storage blob upload-batch --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} --auth-mode key -d '$web' -s . --overwrite true
+
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.0.72
         inlineScript: |
            az cdn endpoint purge --content-paths  "/*" --profile-name ${{ secrets.AZURE_CDN_PROFILE_NAME }} --name ${{ secrets.AZURE_CDN_ENDPOINT }} --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }}
 
-  # Azure logout
-    - name: logout
+    - name: Logout Azure
       run: |
             az logout
       if: always()
+
+    - name: Send Pushcut Notification
+      run: |
+        curl -X POST ${{ env.PUSHCUT_URL }} \
+        -H "Authorization: Bearer ${{ secrets.PUSHCUT_API_KEY }}"

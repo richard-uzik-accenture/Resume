@@ -2,21 +2,39 @@
 
     --color-primary-light: #00AABD;
     --color-primary-light-o: #00AABDBB;
+    --color-primary-light-rgb: 0, 170, 189;
 
     --color-primary: #0085BD;
     --color-primary-o: #0085BDBB;
+    --color-primary-rgb: 0, 133, 189;
 
     --color-primary-dark:#145DA0;
     --color-primary-dark-o:#145DA0BB;
+    --color-primary-dark-rgb: 11, 55, 94;
+
+    --color-primary-ultra: #0a355c;
+    --color-primary-ultra-o: #0a345caf;
 
     --color-secondary: #00CCA4;
+    --color-sceondary-dark: #1b5247;
+    --color-secondary-rgb: 0, 204, 164;
+
     --color-tertiary: #DAA21B;
+    --color-tertiary-rgb: 218, 162, 27;
 
     --color-white:#fff;
-    --color-grey-light:#bbb;
+    --color-white-o:rgba(255, 255, 255, 0.9);
+    --color-grey-light-1: #f7f7f7;
+    --color-grey-light-2:#bbb;
+    --color-grey-light-2-o:rgba(187, 187, 187, 0.486);
     --color-grey-dark:rgb(80, 80, 80);
+    --color-grey-dark-o:rgba(80, 80, 80, 0.75);
+    --color-dark-ultra:rgb(32, 32, 32);
     --color-black:#000;
 
+    --default-small: .5rem;
+    --default-radius: 1rem;
+    --large-radius: 2rem;
 }
 
 * {
@@ -33,6 +51,7 @@
 html{
     box-sizing: border-box;
     font-size: 62.5%;   //1rem = 10px, 10px / 16px = 0.625
+    scroll-behavior: smooth;
 }
 
 body{

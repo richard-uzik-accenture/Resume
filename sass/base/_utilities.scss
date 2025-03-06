@@ -1,3 +1,7 @@
+.u-mt-micro{
+    margin-top: .5rem;
+}
+
 .u-mt-small{
     margin-top: 2rem;
 }
@@ -8,4 +12,21 @@
 
 .u-mt-big{
     margin-top: 6rem;
+}
+
+.u-mb-small{
+    margin-bottom: 2rem;
+}
+
+.u-mb-medium{
+    margin-bottom: 4rem;
+}
+
+.u-mb-big{
+    margin-bottom: 6rem;
+}
+
+.highlight{
+    text-decoration: underline;
+    font-weight: 500;
 }

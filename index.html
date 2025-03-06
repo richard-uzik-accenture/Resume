@@ -5,29 +5,314 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>This is me...</title>
 
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" as="style">
-        <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        <!-- Google fonts -->
+        <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap"
+            as="style"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Main CSS file -->
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-
         <header class="header">
             <div class="header__box header__box--primary">
-                <h1 class="header__heading header__heading--primary">
-                        My name is Richard
-                </h1>
+                <h1 class="header__heading header__heading--primary">My name is Richard</h1>
             </div>
             <div class="header__box header__box--secondary">
-                <h1 class="header__heading header__heading--secondary">
-                        Full Stack Developer
-                </h1>
+                <h1 class="header__heading header__heading--secondary">Full Stack Developer</h1>
             </div>
-            <a href="#" class="btn-transparent btn--animated u-mt-medium">Check me out &rarr;</a>
+            <a href="#page-content" class="btn-transparent btn--animated u-mt-medium">Check me out &rarr;</a>
         </header>
 
-        <main class="content">
-            
-        </main>
+        <div class="return">
+            <a href="#">
+                <svg class="return__icon"><use xlink:href="assets/sprites.svg#icon-home"></use></svg>
+            </a>
+        </div>
 
+        <main class="page-content" id="page-content"> 
+
+            <section class="navigation__cards">
+                <div class="card card--1">
+                    <div class="card__background card__background--1">
+                        <h1 class="card__heading">Education</h1>
+                        <a href="#education" class="card__link u-mt-micro">Go</a>
+                    </div>
+                    <img src="/assets/cropped-education.jpg" alt="Education Image" class="card__image" />
+                </div>
+                <div class="card card--2">
+                    <div class="card__background card__background--2">
+                        <h1 class="card__heading">Experience</h1>
+                        <a href="#experience" class="card__link u-mt-micro">Go</a>
+                    </div>
+                    <img src="/assets/cropped-experience.jpg" alt="Experience Image" class="card__image" />
+                </div>
+                <div class="card card--3">
+                    <div class="card__background card__background--3">
+                        <h1 class="card__heading">Skills</h1>
+                        <a href="#skills" class="card__link u-mt-micro">Go</a>
+                    </div>
+                    <img src="/assets/cropped-skills.jpg" alt="Skills Image" class="card__image" />
+                </div>
+            </section>
+
+            <section class="aboutme" id="aboutme">
+                <h1 class="aboutme__heading">About Me</h1>
+                <div class="aboutme__row">
+                    <div class="aboutme__column aboutme__column--map">
+                        <iframe 
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=17.0600,48.1150,17.1776,48.1822&layer=mapnik&marker=48.1486,17.1077">
+                        </iframe>
+                    </div>
+                    <div class="aboutme__column aboutme__column--photo">
+                        <img src="assets/my-photo.jpg" alt="Profile Photo" class="photo">
+                    </div>
+                    <div class="aboutme__column aboutme__column--info">
+                        <ul>
+                            <li>Name: Richard Užík</li>
+                            <li>Age: 30</li>
+                            <li>Education: Master's Degree in Mechatronics</li>
+                            <li>Location: Bratislava</li>
+                            <li>Current Employer: Accenture</li>
+                            <li>Current Position: Data Engineering Team Lead</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+                   
+
+            <section class="education" id="education">
+                <div class="education__box education__box--high-school">
+                    <div class="education__heading">Where it started?</div>
+                    <div class="education__content">
+                        <div class="education__image">
+                            <img src="/assets/high-school.jpg" alt="High school image" class="education__photo" />
+                        </div>
+                        <div class="education__story">
+                            <h2 class="story__heading">Albert Einstein Grammar School</h2>
+                            <h3 class="story__age">2010 to 2014</h3>
+                            <p class="story__text">
+                                I completed my high school education at Albert Einstein's Grammar School in Bratislava,
+                                Slovakia, a school named after the famous physicist. Over the course of 4 years,
+                                I completed the State Graduation Exam in four subjects:
+                                Slovak language, English (B2 level), and two subjects of my choice, mathematics and informatics.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="education__box education__box--bachelors">
+                    <div class="education__heading">... My First steps</div>
+                    <div class="education__content">
+                        <div class="education__image">
+                            <img src="/assets/bachelors.jpeg" alt="High school image" class="education__photo" />
+                        </div>
+                        <div class="education__story">
+                            <h2 class="story__heading">Faculty of Electrical Engineering and Information Technology</h2>
+                            <h3 class="story__age">- since 2014 until 2017 - Bachelor's degree</h3>
+                            <p class="story__text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid accusantium veniam
+                                praesentium quod, nemo aspernatur deserunt nisi libero corporis repudiandae! Molestiae
+                                vero tenetur, nemo deserunt doloremque expedita distinctio quis hic.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="education__box education__box--masters">
+                    <div class="education__heading">Work hard play hard!</div>
+                    <div class="education__content">
+                        <div class="education__image">
+                            <img src="/assets/masters.jpg" alt="High school image" class="education__photo" />
+                        </div>
+                        <div class="education__story">
+                            <h2 class="story__heading">Faculty of Electrical Engineering and Information Technology</h2>
+                            <h3 class="story__age">- since 2017 until 2019 - Master's degree</h3>
+                            <p class="story__text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid accusantium veniam
+                                praesentium quod, nemo aspernatur deserunt nisi libero corporis repudiandae! Molestiae
+                                vero tenetur, nemo deserunt doloremque expedita distinctio quis hic.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="experience" id="experience">
+                <h1 class="experience__heading">Professional Background</h1>
+
+                <div class="experience__timeline">
+                    <div class="experience__timeline__row">
+                        <div class="experience__timeline__item experience__timeline__item--date">
+                            <div class="row-content">2017</div>
+                        </div>
+                        <div class="experience__timeline__item experience__timeline__item--content">
+                            <div class="row-content">
+                                <h3 class="row-content__heading">Time for real work</h3>
+                                <span class="row-content__description"
+                                    >I joined Accenture as a student. I started to work on a project for international
+                                    company focused on sales. My role was a
+                                    <span class="highlight">Junior developer</span>, mainly focused on learning the
+                                    technology. I was
+                                    <span class="highlight"
+                                        >handling CI/CD and taking care of error tracing / bug-fixing</span
+                                    >
+                                    of small production problems.</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <!-- When creating reversed row, swap content of date and content divs and add reversed class -->
+                    <div class="experience__timeline__row">
+                        <div class="experience__timeline__item experience__timeline__item--date reversed-date">
+                            <div class="row-content">
+                                <h3 class="row-content__heading">Step by Step</h3>
+                                <span class="row-content__description"
+                                    >As our contract with previous client expired I was moved to new opportunities. I
+                                    started to work for a Slovak insurance company and also for a French software
+                                    company. My role was <span class="highlight">Junior developer</span> and I was
+                                    involved in
+                                    <span class="highlight"
+                                        >the development of small tasks and client change requests</span
+                                    >. I was also responsible for CI/CD.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="experience__timeline__item experience__timeline__item--content reversed-content">
+                            <div class="row-content">2018</div>
+                        </div>
+                    </div>
+                    <div class="experience__timeline__row">
+                        <div class="experience__timeline__item experience__timeline__item--date">
+                            <div class="row-content">2019</div>
+                        </div>
+                        <div class="experience__timeline__item experience__timeline__item--content">
+                            <div class="row-content">
+                                <h3 class="row-content__heading">Let's do it full time</h3>
+                                <span class="row-content__description"
+                                    >I graduated from University and started my first full-time job. I started to work
+                                    for 2 new clients which made my total count to
+                                    <span class="highlight">4 active projects</span>. I was working for global bank and
+                                    German energy company. I was
+                                    <span class="highlight">Medior level developer</span> and I covered all kinds of
+                                    tasks, such as
+                                    <span class="highlight"
+                                        >development, CI/CD, bug-fixing, performance optimization and estimation</span
+                                    >.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience__timeline__row">
+                        <div class="experience__timeline__item experience__timeline__item--date reversed-date">
+                            <div class="row-content">
+                                <h3 class="row-content__heading">Keep going</h3>
+                                <span class="row-content__description"
+                                    >Some projects ended and so I moved and got a new role as
+                                    <span class="highlight">Senior developer</span> for global company in infrastructure
+                                    business. My main responsibilites were similar to previous projects. I was also part
+                                    of short-term project with aim of
+                                    <span class="highlight">migration of SharePoint 2016 instance</span> to new
+                                    version.</span
+                                >
+                            </div>
+                        </div>
+                        <div class="experience__timeline__item experience__timeline__item--content reversed-content">
+                            <div class="row-content">2020</div>
+                        </div>
+                    </div>
+                    <div class="experience__timeline__row">
+                        <div class="experience__timeline__item experience__timeline__item--date">
+                            <div class="row-content">2021</div>
+                        </div>
+                        <div class="experience__timeline__item experience__timeline__item--content">
+                            <div class="row-content">
+                                <h3 class="row-content__heading">Learn, learn, learn</h3>
+                                <span class="row-content__description"
+                                    >Our company technology domain decided that we will expand to Data and AI branch. I
+                                    started work as <span class="highlight">Senior Azure developer</span> on
+                                    <span class="highlight">Data related projects</span>. I am responsible for
+                                    development together with
+                                    <span class="highlight">leading my junior colleagues</span> on these projects. I
+                                    also passed Microsoft certification and become
+                                    <span class="highlight">Certified Azure Developer</span>.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience__timeline__row">
+                        <div class="experience__timeline__item experience__timeline__item--date reversed-date">
+                            <div class="row-content">
+                                <h3 class="row-content__heading">It's SharePoint time again, but this time Modern</h3>
+                                <span class="row-content__description">
+                                    New project crossed my way and I am now <span class="highlight">Senior Team Lead</span> and working for European
+                                    bank. Our goal is to leverage Power Platform and redesign <span class="highlight">old custom SharePoint
+                                        solution to modern SharePoint Online</span>. Automate all manual processes with Power
+                                    Automation. To keep up with all new tehcnologies I decided to take an exam and
+                                    become <span class="highlight">Microsoft Certified Power Platform App Maker</span>.</span
+                                >
+                            </div>
+                        </div>
+                        <div class="experience__timeline__item experience__timeline__item--content reversed-content">
+                            <div class="row-content">2022</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="skills" id="skills">
+                <h1 class="skills__heading">My main skills</h1>
+                <div class="skills__main">
+                    <div class="skills__box skills__box-stack">
+                        <div class="skills__box__heading">Main Stack</div>
+                        <ul class="skills__box__list">
+                            <li class="skills__box__item">C#</li>
+                            <li class="skills__box__item">Javascript</li>
+                            <li class="skills__box__item">SQL</li>
+                            <li class="skills__box__item">CSS</li>
+                            <li class="skills__box__item">HTML</li>
+                            <li class="skills__box__item">Git</li>
+                            <li class="skills__box__item">PowerShell</li>
+                        </ul>
+                    </div>
+                    <div class="skills__box skills__box-frameworks">
+                        <div class="skills__box__heading">Frameworks</div>
+                        <ul class="skills__box__list">
+                            <li class="skills__box__item">.NET</li>
+                            <li class="skills__box__item">.NET Core</li>
+                            <li class="skills__box__item">Sitecore</li>
+                            <li class="skills__box__item">SharePoint</li>
+                            <li class="skills__box__item">React</li>
+                            <li class="skills__box__item">NodeJS</li>
+                            <li class="skills__box__item">EmpowerID</li>
+                        </ul>
+                    </div>
+                    <div class="skills__box skills__box-cloud">
+                        <div class="skills__box__heading">Cloud based</div>
+                        <ul class="skills__box__list">
+                            <li class="skills__box__item">Azure Services</li>
+                            <li class="skills__box__item">Power Platform</li>
+                            <li class="skills__box__item">Azure DevOps</li>
+                            <li class="skills__box__item">GitLab</li>
+                            <li class="skills__box__item">GitHub</li>
+                            <li class="skills__box__item">Jira</li>
+                            <li class="skills__box__item">Remedy</li>
+                            <li class="skills__box__item">ServiceNow</li>
+                            <li class="skills__box__item">Cherwell</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
     </body>
 </html>

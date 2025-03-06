@@ -1,0 +1,62 @@
+.header {
+    min-height: calc(100vh - 7rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    color: var(--color-white);
+    background-image: 
+        linear-gradient(
+                to right bottom,
+                var(--color-primary-dark-o) 30%,
+                var(--color-primary-o) 30%,
+                var(--color-primary-o) 60%,
+                var(--color-primary-light-o) 60%
+        ),
+        url("../assets/ba-image.jpg");
+
+    &::after{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: radial-gradient(circle at center, rgba(#000, 0.01), rgba(#000, 0.65));
+    }
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    &__heading{
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 1rem;
+
+        &--primary{
+            font-size: 6rem;
+        }
+
+        &--secondary{
+            font-size: 2rem;
+            margin-top: 2rem;
+        }
+    }
+}
+
+.navigation__cards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 4rem 0;
+    min-height: 80vh;
+    background-image: linear-gradient(
+        to bottom,
+        var(--color-white) 0%,
+        var(--color-grey-light-1) 10%,
+        var(--color-grey-light-1) 90%,
+        var(--color-white) 100%
+    );
+    margin-bottom: 3.5rem;
+}

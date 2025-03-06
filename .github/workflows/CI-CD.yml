@@ -1,0 +1,63 @@
+name: CI-CD-Resume
+run-name: CI-CD-${{ inputs.environment }}-${{ github.ref_name }}
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Select the environment (Development or Production)"
+        required: true
+        default: "Development"
+        type: choice
+        options:
+          - Development
+          - Production
+
+jobs:
+  deploy:
+    name: CI-CD-${{ github.event.inputs.environment || 'Production' }}
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'Production' }}
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.environment == 'Production' || github.ref == 'refs/heads/master' && 'master' || 'development' }}
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets[vars.AZURE_CREDENTIALS] }}
+          enable-AzPSSession: true
+
+      - name: Delete existing files in $web container
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob delete-batch --account-name ${{ vars.AZURE_STORAGE_ACCOUNT }} --auth-mode key -s '$web'
+
+      - name: Upload to $web container
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob upload-batch --account-name ${{ vars.AZURE_STORAGE_ACCOUNT }} --auth-mode key -d '$web' -s . --overwrite true
+
+      - name: Purge CDN endpoint
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az cdn endpoint purge --content-paths  "/*" --profile-name ${{ vars.AZURE_CDN_PROFILE_NAME }} --name ${{ vars.AZURE_CDN_ENDPOINT }} --resource-group ${{ vars.AZURE_RESOURCE_GROUP }}
+
+      - name: Logout Azure
+        run: |
+          az logout
+        if: always()
+
+      - name: Send Pushcut Notification
+        run: |
+          curl -X POST ${{ vars.PUSHCUT_URL }} \
+          -H "Authorization: Bearer ${{ vars.PUSHCUT_API_KEY }}"
