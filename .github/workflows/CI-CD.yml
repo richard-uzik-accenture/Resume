@@ -8,12 +8,12 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: "Select the environment (Development or Production)"
+        description: "Select the environment (Test or Production)"
         required: true
-        default: "Development"
+        default: "Test"
         type: choice
         options:
-          - Development
+          - Test
           - Production
 
 jobs:
