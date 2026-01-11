@@ -4,20 +4,25 @@
     z-index: 1;
     cursor: default;
     padding: 0 2rem;
+    backdrop-filter: blur(var(--header-backdrop-blur));
+    -webkit-backdrop-filter: blur(var(--header-backdrop-blur));
+    background-color: rgba(#000, 0.1);
+    transition: all 0.35s ease-out;
 
     &--primary {
         animation: fade-left 0.75s ease-out;
-        transition: all 0.35s;
+        animation-delay: 0s;
     }
 
     &--secondary {
         animation: fade-right 0.75s ease-out;
-        transition: all 0.35s;
+        animation-delay: var(--header-animation-delay);
     }
 
     &:hover {
-        background-color: rgba(#aaa, 0.15);
-        transform: scale(1.1) rotate(-5deg);
+        background-color: rgba(#aaa, 0.2);
+        transform: scale(1.05) translateY(-2px);
         box-shadow: 0 2rem 6rem rgba(#000, 0.4);
+        border-bottom-color: var(--color-primary-light);
     }
 }

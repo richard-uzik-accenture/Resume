@@ -106,6 +106,10 @@
   --default-small: .5rem;
   --default-radius: 1rem;
   --large-radius: 2rem;
+  --header-gradient-left: 30%;
+  --header-gradient-mid: 60%;
+  --header-backdrop-blur: 8px;
+  --header-animation-delay: 0.1s;
 }
 
 * {
@@ -1063,19 +1067,24 @@ body {
   z-index: 1;
   cursor: default;
   padding: 0 2rem;
+  backdrop-filter: blur(var(--header-backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--header-backdrop-blur));
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: all 0.35s ease-out;
 }
 .header__box--primary {
   animation: fade-left 0.75s ease-out;
-  transition: all 0.35s;
+  animation-delay: 0s;
 }
 .header__box--secondary {
   animation: fade-right 0.75s ease-out;
-  transition: all 0.35s;
+  animation-delay: var(--header-animation-delay);
 }
 .header__box:hover {
-  background-color: rgba(170, 170, 170, 0.15);
-  transform: scale(1.1) rotate(-5deg);
+  background-color: rgba(170, 170, 170, 0.2);
+  transform: scale(1.05) translateY(-2px);
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.4);
+  border-bottom-color: var(--color-primary-light);
 }
 
 .return {
@@ -1755,7 +1764,7 @@ body {
   flex-direction: column;
   position: relative;
   color: var(--color-white);
-  background-image: linear-gradient(to right bottom, var(--color-primary-dark-o) 30%, var(--color-primary-o) 30%, var(--color-primary-o) 60%, var(--color-primary-light-o) 60%), url("../assets/ba-image.jpg");
+  background-image: linear-gradient(to right bottom, var(--color-primary-dark-o) var(--header-gradient-left), var(--color-primary-o) var(--header-gradient-left), var(--color-primary-o) var(--header-gradient-mid), var(--color-primary-light-o) var(--header-gradient-mid)), url("../assets/ba-image.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -1767,16 +1776,21 @@ body {
   width: 100%;
   background-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.65));
 }
+@media (max-width: 768px) {
+  .header {
+    background-attachment: scroll;
+  }
+}
 .header__heading {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1rem;
 }
 .header__heading--primary {
-  font-size: 6rem;
+  font-size: clamp(3rem, 8vw, 6rem);
 }
 .header__heading--secondary {
-  font-size: 2rem;
+  font-size: clamp(1.25rem, 3vw, 2rem);
   margin-top: 2rem;
 }
 

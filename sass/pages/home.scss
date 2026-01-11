@@ -6,17 +6,15 @@
     flex-direction: column;
     position: relative;
     color: var(--color-white);
-    background-image: 
-        linear-gradient(
-                to right bottom,
-                var(--color-primary-dark-o) 30%,
-                var(--color-primary-o) 30%,
-                var(--color-primary-o) 60%,
-                var(--color-primary-light-o) 60%
-        ),
+    background-image:
+        linear-gradient(to right bottom,
+            var(--color-primary-dark-o) var(--header-gradient-left),
+            var(--color-primary-o) var(--header-gradient-left),
+            var(--color-primary-o) var(--header-gradient-mid),
+            var(--color-primary-light-o) var(--header-gradient-mid)),
         url("../assets/ba-image.jpg");
 
-    &::after{
+    &::after {
         content: "";
         position: absolute;
         height: 100%;
@@ -28,35 +26,37 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    &__heading{
+    @media (max-width: 768px) {
+        background-attachment: scroll;
+    }
+
+    &__heading {
         text-transform: uppercase;
         font-weight: 400;
         letter-spacing: 1rem;
 
-        &--primary{
-            font-size: 6rem;
+        &--primary {
+            font-size: clamp(3rem, 8vw, 6rem);
         }
 
-        &--secondary{
-            font-size: 2rem;
+        &--secondary {
+            font-size: clamp(1.25rem, 3vw, 2rem);
             margin-top: 2rem;
         }
     }
 }
 
-.navigation__cards{
+.navigation__cards {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     padding: 4rem 0;
     min-height: 80vh;
-    background-image: linear-gradient(
-        to bottom,
-        var(--color-white) 0%,
-        var(--color-grey-light-1) 10%,
-        var(--color-grey-light-1) 90%,
-        var(--color-white) 100%
-    );
+    background-image: linear-gradient(to bottom,
+            var(--color-white) 0%,
+            var(--color-grey-light-1) 10%,
+            var(--color-grey-light-1) 90%,
+            var(--color-white) 100%);
     margin-bottom: 3.5rem;
 }

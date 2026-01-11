@@ -46,6 +46,12 @@
     --default-small: .5rem;
     --default-radius: 1rem;
     --large-radius: 2rem;
+
+    // Header customization
+    --header-gradient-left: 30%;
+    --header-gradient-mid: 60%;
+    --header-backdrop-blur: 8px;
+    --header-animation-delay: 0.1s;
 }
 
 * {
