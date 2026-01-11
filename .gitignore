@@ -1,1 +1,36 @@
-node_modules
+# Dependencies
+node_modules/
+package-lock.json
+
+# Compiled CSS (intermediate files)
+css/style.comp.css
+css/style.prefix.css
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# IDE & Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Environment variables
+.env
+.env.local
