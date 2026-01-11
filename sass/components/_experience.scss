@@ -2,12 +2,16 @@
 @use "experience-card" as *;
 
 .experience {
-    margin-top: 3.5rem;
-    padding: 5rem 0;
+    margin-top: var(--section-spacing-top);
+    margin-bottom: var(--section-spacing-bottom);
+    padding: var(--section-padding-vertical) var(--section-padding-horizontal);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: var(--content-max-width);
+    margin-left: auto;
+    margin-right: auto;
 
     background: linear-gradient(180deg,
             var(--color-white) 0%,
@@ -18,20 +22,21 @@
     position: relative;
 
     &__heading {
-        font-size: 4rem;
-        font-weight: 600;
-        letter-spacing: 0.5rem;
+        font-size: var(--heading-main-size);
+        font-weight: var(--heading-main-weight);
+        letter-spacing: var(--heading-main-letter);
         text-transform: uppercase;
         padding: 2rem 0 1rem;
-        transition: all 0.3s ease;
+        transition: all var(--transition-duration) var(--transition-timing);
+        margin-bottom: var(--section-gap);
 
-        background: linear-gradient(to right, #00cca4, #00aabd, #145da0);
+        background: var(--heading-gradient);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
         &:hover {
-            transform: scale(1.08);
+            transform: scale(1.05);
         }
 
         @media (max-width: 768px) {
@@ -41,16 +46,16 @@
     }
 
     &__subtitle {
-        font-size: 1.8rem;
+        font-size: var(--subtitle-size);
         color: var(--color-grey-dark);
-        margin-bottom: 4rem;
+        margin-bottom: var(--section-gap);
         max-width: 600px;
         text-align: center;
-        font-weight: 400;
+        font-weight: var(--subtitle-weight);
         line-height: 1.6;
 
         @media (max-width: 768px) {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 2rem;
         }
     }
@@ -80,7 +85,7 @@
             transform: translateX(-50%);
             z-index: 1;
 
-            @media (max-width: 1023px) {
+            @media (max-width: 1024px) {
                 display: none;
             }
         }

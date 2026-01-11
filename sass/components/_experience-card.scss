@@ -78,7 +78,7 @@
         font-weight: 700;
         color: var(--color-primary-ultra);
 
-        @media (max-width: 1023px) {
+        @media (max-width: 1024px) {
             position: relative;
             left: 0;
             width: auto;
@@ -99,7 +99,7 @@
         cursor: pointer;
         overflow: hidden;
 
-        @media (max-width: 1023px) {
+        @media (max-width: 1024px) {
             margin-left: 0;
         }
 
@@ -115,7 +115,7 @@
             transform: translateY(-50%);
             transition: all 0.3s ease;
 
-            @media (max-width: 1023px) {
+            @media (max-width: 1024px) {
                 display: none;
             }
         }

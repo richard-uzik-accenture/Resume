@@ -1,3 +1,10 @@
-.page-content{
-    margin-top: 3.5rem;
+.page-content {
+    margin-top: var(--section-spacing-top);
+}
+
+.content-container {
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 var(--section-padding-horizontal);
 }
