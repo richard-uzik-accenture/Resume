@@ -19,42 +19,42 @@
         align-items: center;
         border-radius: var(--default-radius);
         background: linear-gradient(135deg,
-                rgba(#fff, 0.25) 0%,
-                rgba(#fff, 0.1) 100%);
+                rgba(10, 53, 92, 0.4) 0%,
+                rgba(0, 133, 189, 0.3) 100%);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(#fff, 0.18);
+        border: 1px solid rgba(0, 133, 189, 0.35);
         box-shadow:
-            0 2px 8px rgba(#000, 0.08),
-            0 4px 16px rgba(#000, 0.12),
-            inset 0 1px 0 rgba(#fff, 0.3);
+            0 2px 8px rgba(0, 0, 0, 0.15),
+            0 4px 16px rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         outline: none;
 
         &:hover {
             background: linear-gradient(135deg,
-                    rgba(#fff, 0.35) 0%,
-                    rgba(#fff, 0.15) 100%);
+                    rgba(0, 133, 189, 0.5) 0%,
+                    rgba(0, 170, 189, 0.45) 100%);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            transform: translateY(-4px);
+            transform: translateY(-4px) scale(1.08);
             box-shadow:
-                0 4px 12px rgba(#000, 0.12),
-                0 8px 24px rgba(#000, 0.16),
-                inset 0 1px 0 rgba(#fff, 0.4);
+                0 4px 12px rgba(0, 0, 0, 0.2),
+                0 8px 24px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
 
         &:active {
-            transform: translateY(-2px);
+            transform: translateY(-2px) scale(1.05);
             box-shadow:
-                0 2px 8px rgba(#000, 0.08),
-                0 4px 16px rgba(#000, 0.12),
-                inset 0 1px 0 rgba(#fff, 0.3);
+                0 2px 8px rgba(0, 0, 0, 0.15),
+                0 4px 16px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
         &:focus-visible {
-            outline: 2px solid var(--color-primary);
+            outline: 2px solid var(--color-primary-light);
             outline-offset: 2px;
         }
     }
@@ -62,15 +62,15 @@
     &__icon {
         height: 2.5rem;
         width: 2.5rem;
-        fill: rgba(#000, 0.7);
+        fill: var(--color-white);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        filter: drop-shadow(0 1px 2px rgba(#000, 0.1));
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
     }
 
     &__link:hover &__icon {
-        fill: rgba(#000, 0.85);
+        fill: var(--color-white);
         animation: icon-rotate 0.4s ease-in-out;
-        filter: drop-shadow(0 2px 4px rgba(#000, 0.15));
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     }
 }
 
