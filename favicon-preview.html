@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Preview - Richard Užík Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 2rem;
+            padding: 3rem;
+            box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #0085BD;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .favicon-item {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .favicon-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1rem 2rem rgba(0, 133, 189, 0.2);
+        }
+
+        .favicon-item img {
+            display: block;
+            margin: 0 auto 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .favicon-item h3 {
+            color: #145DA0;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .favicon-item p {
+            color: #999;
+            font-size: 0.8rem;
+            margin: 0;
+        }
+
+        .svg-preview {
+            background: #f8f9fa;
+            border-radius: 1rem;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .svg-preview img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 1rem 2rem rgba(0, 0, 0, 0.1));
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #0085BD;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .info-box h3 {
+            color: #0085BD;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box ul {
+            margin-left: 1.5rem;
+            color: #555;
+        }
+
+        .info-box li {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎨 Favicon System</h1>
+        <p>Professional favicon design for Richard Užík's resume website</p>
+
+        <div class="svg-preview">
+            <h2 style="color: #145DA0; margin-bottom: 1.5rem;">SVG Source (Scalable)</h2>
+            <img src="assets/SVG/favicon.svg" alt="Favicon SVG" style="width: 300px; height: 300px;">
+        </div>
+
+        <div style="margin: 3rem 0;">
+            <h2 style="color: #145DA0; margin-bottom: 1.5rem; text-align: center;">Generated Sizes</h2>
+            <div class="grid">
+                <div class="favicon-item">
+                    <img src="favicon-16x16.png" alt="16x16 favicon" width="64" height="64"
+                        style="image-rendering: pixelated;">
+                    <h3>Browser Tab</h3>
+                    <p>16×16 pixels</p>
+                </div>
+
+                <div class="favicon-item">
+                    <img src="favicon-32x32.png" alt="32x32 favicon" width="64" height="64">
+                    <h3>Browser Tab (Retina)</h3>
+                    <p>32×32 pixels</p>
+                </div>
+
+                <div class="favicon-item">
+                    <img src="apple-touch-icon.png" alt="Apple touch icon" width="90" height="90">
+                    <h3>iOS Home Screen</h3>
+                    <p>180×180 pixels</p>
+                </div>
+
+                <div class="favicon-item">
+                    <img src="android-chrome-192x192.png" alt="Android icon" width="96" height="96">
+                    <h3>Android Icon</h3>
+                    <p>192×192 pixels</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>✨ Design Features</h3>
+            <ul>
+                <li><strong>Career Growth:</strong> Three ascending steps representing professional progression</li>
+                <li><strong>Color Scheme:</strong> Azure blue gradient (#0085BD → #145DA0) with teal accents (#00CCA4)
+                </li>
+                <li><strong>Modern Minimalism:</strong> Clean geometric shapes for clarity at all sizes</li>
+                <li><strong>Professional:</strong> Symbolizes upward trajectory and data-driven excellence</li>
+                <li><strong>Scalable:</strong> Clear and recognizable from 16px to 512px</li>
+            </ul>
+        </div>
+
+        <div class="info-box" style="background: #fff3cd; border-left-color: #DAA21B;">
+            <h3 style="color: #856404;">🔧 How to Update</h3>
+            <ul style="color: #856404;">
+                <li>Edit <code>assets/SVG/favicon.svg</code> with your preferred design</li>
+                <li>Run <code>npm run generate:favicons</code> to regenerate all sizes</li>
+                <li>Check <code>FAVICON.md</code> for detailed documentation</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
