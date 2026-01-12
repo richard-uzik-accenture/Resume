@@ -28,6 +28,7 @@ class ContentLoader {
         this.loadEducation();
         this.loadExperience();
         this.loadSkills();
+        this.loadSocialLinks();
     }
 
     loadHeader() {
@@ -245,6 +246,32 @@ class ContentLoader {
         </ul>
       </div>
     `).join('');
+    }
+
+    loadSocialLinks() {
+        const { socialLinks } = this.config;
+        if (!socialLinks) return;
+
+        // Update LinkedIn link
+        const linkedinLink = document.querySelector('[data-social="linkedin"]');
+        if (linkedinLink && socialLinks.linkedin) {
+            linkedinLink.href = socialLinks.linkedin.url;
+            linkedinLink.setAttribute('aria-label', `LinkedIn - ${socialLinks.linkedin.label}`);
+        }
+
+        // Update GitHub link
+        const githubLink = document.querySelector('[data-social="github"]');
+        if (githubLink && socialLinks.github) {
+            githubLink.href = socialLinks.github.url;
+            githubLink.setAttribute('aria-label', `GitHub - ${socialLinks.github.label}`);
+        }
+
+        // Update Email link
+        const emailLink = document.querySelector('[data-social="email"]');
+        if (emailLink && socialLinks.email) {
+            emailLink.href = socialLinks.email.url;
+            emailLink.setAttribute('aria-label', `Email - ${socialLinks.email.label}`);
+        }
     }
 }
 

@@ -403,5 +403,19 @@
                 ]
             }
         ]
+    },
+    "socialLinks": {
+        "linkedin": {
+            "url": "https://www.linkedin.com/in/richard-uzik-accenture/",
+            "label": "Connect on LinkedIn"
+        },
+        "github": {
+            "url": "https://github.com/richard-uzik-accenture/Resume",
+            "label": "View on GitHub"
+        },
+        "email": {
+            "url": "mailto:richard.uzik2@example.com",
+            "label": "Send message to Richard"
+        }
     }
 }

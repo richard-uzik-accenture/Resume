@@ -445,9 +445,10 @@ body {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  max-width: var(--content-max-wide);
-  margin-left: auto;
-  margin-right: auto;
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(-1 * var(--section-padding-horizontal));
+  margin-right: calc(-1 * var(--section-padding-horizontal));
   background-image: linear-gradient(135deg, var(--color-primary-ultra) 0%, var(--color-primary-ultra) 12%, var(--color-primary-dark) 12%, var(--color-primary-dark) 28%, var(--color-primary) 28%, var(--color-primary) 44%, var(--color-primary-light) 44%, var(--color-primary-light) 60%, var(--color-secondary) 60%, var(--color-secondary) 76%, var(--color-primary-dark) 76%, var(--color-primary-dark) 92%, var(--color-primary-ultra) 92%, var(--color-primary-ultra) 100%);
 }
 .education::before {
@@ -470,10 +471,8 @@ body {
   z-index: 2;
   position: relative;
   text-align: center;
-  background: var(--heading-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-white);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(0, 133, 189, 0.3), 0 0 40px rgba(0, 204, 164, 0.2);
 }
 @media (max-width: 768px) {
   .education__heading {
@@ -1336,16 +1335,16 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--color-dark-ultra);
-  margin-top: var(--section-spacing-top);
-  margin-bottom: var(--section-spacing-bottom);
-  padding: var(--section-padding-vertical) var(--section-padding-horizontal);
+  margin-top: 3.5rem;
+  padding: 8rem 3.5rem;
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  max-width: var(--content-max-wide);
+  width: 100%;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-image: linear-gradient(to bottom, var(--color-white) 0%, rgba(255, 255, 255, 0.95) 5%, rgba(255, 255, 255, 0.85) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0.95) 95%, var(--color-white) 100%);
+  background-image: linear-gradient(160deg, rgba(10, 53, 92, 0.12) 0%, rgba(0, 133, 189, 0.08) 45%, rgba(0, 204, 164, 0.12) 100%), linear-gradient(to bottom, var(--color-white) 0%, rgba(255, 255, 255, 0.96) 5%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0.96) 95%, var(--color-white) 100%);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1414,28 +1413,32 @@ body {
 }
 .skills__main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  justify-items: center;
-  align-items: start;
+  grid-template-columns: repeat(4, minmax(32rem, 1fr));
+  align-items: stretch;
   width: 100%;
-  max-width: var(--content-max-width);
-  gap: 2.5rem;
+  max-width: 200rem;
+  column-gap: 4.5rem;
+  row-gap: 3.5rem;
   z-index: 1;
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .skills__main {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, minmax(28rem, 1fr));
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 900px) {
+  .skills__main {
+    grid-template-columns: repeat(2, minmax(24rem, 1fr));
+  }
+}
+@media (max-width: 600px) {
   .skills__main {
     grid-template-columns: 1fr;
   }
 }
 .skills__box {
   width: 100%;
-  min-height: 400px;
+  min-width: 32rem;
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -1536,6 +1539,10 @@ body {
   text-align: center;
   margin-bottom: 3rem;
   opacity: 0.85;
+  min-height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .skills__box__list {
   width: 100%;
@@ -1706,6 +1713,98 @@ body {
     transform: translateY(0);
   }
 }
+.social-links {
+  position: fixed;
+  bottom: var(--section-padding-horizontal);
+  left: var(--section-padding-horizontal);
+  z-index: 99;
+  animation: glass-entrance 0.6s ease-out;
+  animation-delay: 0.2s;
+}
+.social-links__group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.social-links__link {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--default-radius);
+  background: linear-gradient(135deg, rgba(10, 53, 92, 0.4) 0%, rgba(0, 133, 189, 0.3) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 133, 189, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  outline: none;
+  text-decoration: none;
+}
+.social-links__link:hover {
+  background: linear-gradient(135deg, rgba(0, 133, 189, 0.5) 0%, rgba(0, 170, 189, 0.45) 100%);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.social-links__link:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+.social-links__link:active {
+  transform: translateY(-2px) scale(1.05);
+}
+.social-links__icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: currentColor;
+  color: var(--color-white);
+  transition: color 0.3s ease-out;
+}
+.social-links__tooltip {
+  position: absolute;
+  left: 100%;
+  margin-left: 1rem;
+  background-color: rgba(32, 32, 32, 0.95);
+  color: var(--color-white);
+  padding: 0.6rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-10px);
+  transition: all 0.2s ease-out;
+}
+.social-links .social-links__link:hover .social-links__tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+@media (max-width: 320px) {
+  .social-links {
+    bottom: 1rem;
+    left: 1rem;
+  }
+  .social-links__link {
+    width: 4rem;
+    height: 4rem;
+  }
+  .social-links__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  .social-links__group {
+    gap: 1rem;
+  }
+}
+
 .aboutme {
   margin-top: var(--section-spacing-top);
   margin-bottom: var(--section-spacing-bottom);
