@@ -292,18 +292,13 @@
                 ]
             },
             {
-                "id": "frameworks",
+                "id": "data",
                 "icon": "icon-briefcase",
-                "heading": "Frameworks & Platforms",
-                "description": "Enterprise solutions",
+                "heading": "Azure Data Engineering",
+                "description": "Data platforms & analytics",
                 "items": [
                     {
                         "name": "Azure Data Factory",
-                        "level": "Primary Stack",
-                        "percentage": 95
-                    },
-                    {
-                        "name": "SharePoint",
                         "level": "Primary Stack",
                         "percentage": 95
                     },
@@ -318,22 +313,27 @@
                         "percentage": 85
                     },
                     {
-                        "name": ".NET / .NET Core",
-                        "level": "Functional Knowledge",
-                        "percentage": 70
+                        "name": "Power BI",
+                        "level": "Daily Use",
+                        "percentage": 85
                     },
                     {
-                        "name": "React",
-                        "level": "Functional Knowledge",
-                        "percentage": 70
+                        "name": "Data Modeling",
+                        "level": "Daily Use",
+                        "percentage": 85
+                    },
+                    {
+                        "name": "Medallion Architecture",
+                        "level": "Daily Use",
+                        "percentage": 85
                     }
                 ]
             },
             {
                 "id": "cloud",
                 "icon": "icon-cloud",
-                "heading": "Cloud & DevOps",
-                "description": "Azure ecosystem expert",
+                "heading": "Cloud Platform & DevOps",
+                "description": "Infrastructure & automation",
                 "items": [
                     {
                         "name": "Azure Services",
@@ -344,11 +344,6 @@
                         "name": "GitHub DevOps",
                         "level": "Primary Stack",
                         "percentage": 95
-                    },
-                    {
-                        "name": "Power BI",
-                        "level": "Daily Use",
-                        "percentage": 85
                     },
                     {
                         "name": "Power Platform",
@@ -364,14 +359,19 @@
                         "name": "GitLab",
                         "level": "Functional Knowledge",
                         "percentage": 70
+                    },
+                    {
+                        "name": ".NET / .NET Core",
+                        "level": "Functional Knowledge",
+                        "percentage": 70
                     }
                 ]
             },
             {
                 "id": "ai",
                 "icon": "icon-light-bulb",
-                "heading": "AI & Innovation",
-                "description": "Next-gen development",
+                "heading": "AI & Enterprise Solutions",
+                "description": "Next-gen tools & platforms",
                 "items": [
                     {
                         "name": "RAG / AI Search",
@@ -379,14 +379,14 @@
                         "percentage": 95
                     },
                     {
+                        "name": "SharePoint",
+                        "level": "Primary Stack",
+                        "percentage": 95
+                    },
+                    {
                         "name": "GitHub Copilot",
                         "level": "Daily Use",
                         "percentage": 85
-                    },
-                    {
-                        "name": "Cursor AI",
-                        "level": "Functional Knowledge",
-                        "percentage": 70
                     },
                     {
                         "name": "Azure OpenAI",
