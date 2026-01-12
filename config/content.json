@@ -1,0 +1,407 @@
+{
+    "$schema": "./content.schema.json",
+    "header": {
+        "primaryHeading": "Richard Uzik",
+        "secondaryHeading": "Data Engineering Team Lead | Azure & Power Platform Specialist",
+        "ctaText": "View my career path →"
+    },
+    "navigationCards": [
+        {
+            "id": "education",
+            "heading": "Education",
+            "linkText": "Explore",
+            "image": "/assets/cropped-education.jpg",
+            "alt": "Education Image"
+        },
+        {
+            "id": "experience",
+            "heading": "Experience",
+            "linkText": "Discover",
+            "image": "/assets/cropped-experience.jpg",
+            "alt": "Experience Image"
+        },
+        {
+            "id": "skills",
+            "heading": "Skills",
+            "linkText": "View",
+            "image": "/assets/cropped-skills.jpg",
+            "alt": "Skills Image"
+        }
+    ],
+    "aboutMe": {
+        "heading": "About Me",
+        "eyebrow": "Azure Data Engineer & Team Lead",
+        "title": "Engineering reliable data solutions and leading technical teams in Bratislava",
+        "summary": "I’ve spent the last 8 years at Accenture evolving from a student developer into a Team Lead. My focus is on the how—bridging the gap between complex Azure architecture and the daily reality of shipping code. I don't just design systems; I stay hands-on to ensure they actually work in production while mentoring the next generation of engineers.",
+        "facts": [
+            {
+                "label": "Experience",
+                "value": "8+ years"
+            },
+            {
+                "label": "Role",
+                "value": "Data Engineering Team Lead"
+            },
+            {
+                "label": "Location",
+                "value": "Bratislava"
+            },
+            {
+                "label": "Languages",
+                "value": "English, Slovak"
+            }
+        ],
+        "tags": [
+            "Azure",
+            "Data Engineering",
+            "Power Platform",
+            "CI/CD",
+            "Team Leadership"
+        ],
+        "photoUrl": "assets/my-photo.jpg",
+        "photoAlt": "Profile Photo",
+        "mapLabel": "Based in Bratislava",
+        "metrics": [
+            {
+                "value": "8+ yrs",
+                "label": "At Accenture"
+            },
+            {
+                "value": "Up to 4",
+                "label": "Concurrent Projects"
+            },
+            {
+                "value": "2+ yrs",
+                "label": "Team Leading"
+            }
+        ],
+        "certificationsHeading": "Certifications",
+        "certifications": [
+            {
+                "image": "assets/az-204.png",
+                "alt": "AZ-204",
+                "label": "AZ-204",
+                "pill": "Azure Developer"
+            },
+            {
+                "image": "assets/pl-100.png",
+                "alt": "PL-100",
+                "label": "PL-100",
+                "pill": "Power Platform App Maker"
+            },
+            {
+                "image": "assets/psm.png",
+                "alt": "PSM I",
+                "label": "PSM I",
+                "pill": "Scrum Master"
+            }
+        ]
+    },
+    "education": {
+        "heading": "Education",
+        "subtitle": "Academic foundation built through specialized study in Computer Science and Information Technology",
+        "timeline": [
+            {
+                "period": "2010 - 2014",
+                "periodBadge": "2010 - 2014",
+                "subheading": "Where it started",
+                "image": "/assets/high-school.jpg",
+                "imageAlt": "Albert Einstein Grammar School",
+                "title": "Grammar School",
+                "institution": "Albert Einstein's Grammar School, Bratislava",
+                "description": "Focus on Mathematics and Informatics, which provided the logical foundation for my move into computer science.",
+                "position": "left"
+            },
+            {
+                "period": "2014 - 2017",
+                "periodBadge": "2014 - 2017",
+                "subheading": "First Steps",
+                "image": "/assets/bachelors.jpeg",
+                "imageAlt": "Faculty of Electrical Engineering",
+                "title": "FEI STU Bratislava",
+                "institution": "Bachelor's Degree in Applied Informatics",
+                "description": "Gained foundational knowledge in computer science, software engineering, and information systems. Developed strong programming skills and understanding of core algorithms, data structures, and system design principles that formed the basis of my professional career.",
+                "position": "right"
+            },
+            {
+                "period": "2017 - 2019",
+                "periodBadge": "2017 - 2019",
+                "subheading": "Advanced Studies",
+                "image": "/assets/masters.jpg",
+                "imageAlt": "Master's Studies",
+                "title": "FEI STU Bratislava",
+                "institution": "Master's Degree in Mechatronics",
+                "description": "Designed and built a small-scale autonomous vehicle (RC car platform). This project involved implementing navigation logic and sensor integration, sparking my interest in how data drives automated decision-making.",
+                "position": "left"
+            }
+        ]
+    },
+    "experience": {
+        "heading": "Professional Background",
+        "subtitle": "8+ years of progressive career growth across development, architecture, and leadership",
+        "timeline": [
+            {
+                "year": "2017",
+                "level": "junior",
+                "title": "Junior Developer",
+                "company": "Accenture",
+                "duration": "1 year",
+                "description": "I joined Accenture as a student, working on a project for an international company focused on sales. My role focused on learning technologies and development fundamentals.",
+                "highlights": [
+                    "CI/CD Pipelines",
+                    "Error Tracing",
+                    "Bug Fixing"
+                ],
+                "position": "left"
+            },
+            {
+                "year": "2018",
+                "level": "junior",
+                "title": "Junior Developer",
+                "company": "Accenture (Multiple Clients)",
+                "duration": "1 year",
+                "description": "Worked for a Slovak insurance company and French software company. Transitioned to broader responsibilities as my contract expanded.",
+                "highlights": [
+                    "Client Change Requests",
+                    "Development Tasks",
+                    "CI/CD Management"
+                ],
+                "position": "right"
+            },
+            {
+                "year": "2019",
+                "level": "medior",
+                "title": "Medior Developer",
+                "company": "Accenture (Global Bank, German Energy Co.)",
+                "duration": "1 year",
+                "description": "Graduated and transitioned to full-time role managing 4 active projects simultaneously for major global clients. Took on full development lifecycle responsibilities.",
+                "highlights": [
+                    "Full Dev Lifecycle",
+                    "Performance Optimization",
+                    "Estimation & Planning"
+                ],
+                "position": "left"
+            },
+            {
+                "year": "2020",
+                "level": "senior",
+                "title": "Senior Developer",
+                "company": "Accenture (Infrastructure Global Company)",
+                "duration": "1 year",
+                "description": "Promoted to Senior level with responsibility for complex infrastructure projects. Led short-term migration initiatives and technical architecture decisions.",
+                "highlights": [
+                    "SharePoint Migration",
+                    "Technical Architecture",
+                    "Project Leadership"
+                ],
+                "position": "right"
+            },
+            {
+                "year": "2021",
+                "level": "senior",
+                "title": "Senior Azure Developer",
+                "company": "Accenture (Data & AI Branch)",
+                "duration": "1+ year",
+                "badge": "Certified: Azure Developer",
+                "description": "Spearheaded expansion into Data and AI domain. Responsible for development, mentoring junior colleagues, and delivering data-focused solutions on cloud platforms.",
+                "highlights": [
+                    "Azure Cloud",
+                    "Data Engineering",
+                    "Team Mentoring",
+                    "AZ-204 Certified"
+                ],
+                "position": "left"
+            },
+            {
+                "year": "2022",
+                "level": "lead",
+                "title": "Senior Team Lead",
+                "company": "Accenture (European Bank)",
+                "duration": "1+ year",
+                "badge": "Certified: Power Platform",
+                "description": "Promoted to Team Lead overseeing SharePoint modernization initiative. Led redesign of legacy systems to modern cloud-based solutions with process automation.",
+                "highlights": [
+                    "Team Leadership",
+                    "SharePoint Online",
+                    "Power Platform",
+                    "PL-100 Certified"
+                ],
+                "position": "right"
+            },
+            {
+                "year": "2023-25",
+                "level": "lead",
+                "title": "Data Engineering Team Lead",
+                "company": "Accenture",
+                "duration": "2+ years",
+                "badge": "Current Role",
+                "description": "Leading Data Engineering initiatives across multiple projects. Responsible for architecture decisions, team development, and delivery of enterprise-scale data solutions on Azure.",
+                "highlights": [
+                    "Data Architecture",
+                    "Azure & Cloud",
+                    "Team Management",
+                    "Enterprise Solutions"
+                ],
+                "position": "left"
+            }
+        ]
+    },
+    "skills": {
+        "heading": "My Core Expertise",
+        "subtitle": "Technologies & Tools I Master Daily",
+        "categories": [
+            {
+                "id": "stack",
+                "icon": "icon-code",
+                "heading": "Core Technologies",
+                "description": "Daily development stack",
+                "items": [
+                    {
+                        "name": "SQL / T-SQL",
+                        "level": "Primary Stack",
+                        "percentage": 95
+                    },
+                    {
+                        "name": "Python",
+                        "level": "Daily Use",
+                        "percentage": 85
+                    },
+                    {
+                        "name": "PowerShell",
+                        "level": "Daily Use",
+                        "percentage": 85
+                    },
+                    {
+                        "name": "C#",
+                        "level": "Functional Knowledge",
+                        "percentage": 70
+                    },
+                    {
+                        "name": "JavaScript",
+                        "level": "Functional Knowledge",
+                        "percentage": 70
+                    },
+                    {
+                        "name": "HTML & CSS",
+                        "level": "Functional Knowledge",
+                        "percentage": 70
+                    }
+                ]
+            },
+            {
+                "id": "frameworks",
+                "icon": "icon-briefcase",
+                "heading": "Frameworks & Platforms",
+                "description": "Enterprise solutions",
+                "items": [
+                    {
+                        "name": "Azure Data Factory",
+                        "level": "Primary Stack",
+                        "percentage": 95
+                    },
+                    {
+                        "name": "SharePoint",
+                        "level": "Primary Stack",
+                        "percentage": 95
+                    },
+                    {
+                        "name": "Azure Databricks",
+                        "level": "Daily Use",
+                        "percentage": 85
+                    },
+                    {
+                        "name": "Azure Synapse Analytics",
+                        "level": "Daily Use",
+                        "percentage": 85
+                    },
+                    {
+                        "name": ".NET / .NET Core",
+                        "level": "Functional Knowledge",
+                        "percentage": 70
+                    },
+                    {
+                        "name": "React",
+                        "level": "Functional Knowledge",
+                        "percentage": 70
+                    }
+                ]
+            },
+            {
+                "id": "cloud",
+                "icon": "icon-cloud",
+                "heading": "Cloud & DevOps",
+                "description": "Azure ecosystem expert",
+                "items": [
+                    {
+                        "name": "Azure Services",
+                        "level": "Primary Stack",
+                        "percentage": 95
+                    },
+                    {
+                        "name": "GitHub DevOps",
+                        "level": "Primary Stack",
+                        "percentage": 95
+                    },
+                    {
+                        "name": "Power BI",
+                        "level": "Daily Use",
+                        "percentage": 85
+                    },
+                    {
+                        "name": "Power Platform",
+                        "level": "Daily Use",
+                        "percentage": 85
+                    },
+                    {
+                        "name": "Azure DevOps",
+                        "level": "Functional Knowledge",
+                        "percentage": 70
+                    },
+                    {
+                        "name": "GitLab",
+                        "level": "Functional Knowledge",
+                        "percentage": 70
+                    }
+                ]
+            },
+            {
+                "id": "ai",
+                "icon": "icon-light-bulb",
+                "heading": "AI & Innovation",
+                "description": "Next-gen development",
+                "items": [
+                    {
+                        "name": "RAG / AI Search",
+                        "level": "Primary Stack",
+                        "percentage": 95
+                    },
+                    {
+                        "name": "GitHub Copilot",
+                        "level": "Daily Use",
+                        "percentage": 85
+                    },
+                    {
+                        "name": "Cursor AI",
+                        "level": "Functional Knowledge",
+                        "percentage": 70
+                    },
+                    {
+                        "name": "Azure OpenAI",
+                        "level": "Functional Knowledge",
+                        "percentage": 70
+                    },
+                    {
+                        "name": "Azure AI Services",
+                        "level": "Functional Knowledge",
+                        "percentage": 70
+                    },
+                    {
+                        "name": "LangChain",
+                        "level": "Functional Knowledge",
+                        "percentage": 70
+                    }
+                ]
+            }
+        ]
+    }
+}

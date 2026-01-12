@@ -1,0 +1,383 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Resume Content Configuration",
+    "description": "Schema for resume website content configuration",
+    "type": "object",
+    "required": [
+        "header",
+        "navigationCards",
+        "aboutMe",
+        "education",
+        "experience",
+        "skills"
+    ],
+    "properties": {
+        "header": {
+            "type": "object",
+            "required": [
+                "primaryHeading",
+                "secondaryHeading",
+                "ctaText"
+            ],
+            "properties": {
+                "primaryHeading": {
+                    "type": "string"
+                },
+                "secondaryHeading": {
+                    "type": "string"
+                },
+                "ctaText": {
+                    "type": "string"
+                }
+            }
+        },
+        "navigationCards": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "heading",
+                    "linkText",
+                    "image",
+                    "alt"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "heading": {
+                        "type": "string"
+                    },
+                    "linkText": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "alt": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "aboutMe": {
+            "type": "object",
+            "required": [
+                "heading",
+                "eyebrow",
+                "title",
+                "summary",
+                "facts",
+                "tags",
+                "photoUrl",
+                "photoAlt",
+                "mapLabel",
+                "metrics",
+                "certificationsHeading",
+                "certifications"
+            ],
+            "properties": {
+                "heading": {
+                    "type": "string"
+                },
+                "eyebrow": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "facts": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "label",
+                            "value"
+                        ],
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "photoUrl": {
+                    "type": "string"
+                },
+                "photoAlt": {
+                    "type": "string"
+                },
+                "mapLabel": {
+                    "type": "string"
+                },
+                "metrics": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "value",
+                            "label"
+                        ],
+                        "properties": {
+                            "value": {
+                                "type": "string"
+                            },
+                            "label": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "certificationsHeading": {
+                    "type": "string"
+                },
+                "certifications": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "image",
+                            "alt",
+                            "label",
+                            "pill"
+                        ],
+                        "properties": {
+                            "image": {
+                                "type": "string"
+                            },
+                            "alt": {
+                                "type": "string"
+                            },
+                            "label": {
+                                "type": "string"
+                            },
+                            "pill": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "education": {
+            "type": "object",
+            "required": [
+                "heading",
+                "subtitle",
+                "timeline"
+            ],
+            "properties": {
+                "heading": {
+                    "type": "string"
+                },
+                "subtitle": {
+                    "type": "string"
+                },
+                "timeline": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "period",
+                            "periodBadge",
+                            "subheading",
+                            "image",
+                            "imageAlt",
+                            "title",
+                            "institution",
+                            "description",
+                            "position"
+                        ],
+                        "properties": {
+                            "period": {
+                                "type": "string"
+                            },
+                            "periodBadge": {
+                                "type": "string"
+                            },
+                            "subheading": {
+                                "type": "string"
+                            },
+                            "image": {
+                                "type": "string"
+                            },
+                            "imageAlt": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "institution": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "position": {
+                                "type": "string",
+                                "enum": [
+                                    "left",
+                                    "right"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "experience": {
+            "type": "object",
+            "required": [
+                "heading",
+                "subtitle",
+                "timeline"
+            ],
+            "properties": {
+                "heading": {
+                    "type": "string"
+                },
+                "subtitle": {
+                    "type": "string"
+                },
+                "timeline": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "year",
+                            "level",
+                            "title",
+                            "company",
+                            "duration",
+                            "description",
+                            "highlights",
+                            "position"
+                        ],
+                        "properties": {
+                            "year": {
+                                "type": "string"
+                            },
+                            "level": {
+                                "type": "string",
+                                "enum": [
+                                    "junior",
+                                    "medior",
+                                    "senior",
+                                    "lead"
+                                ]
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "company": {
+                                "type": "string"
+                            },
+                            "duration": {
+                                "type": "string"
+                            },
+                            "badge": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "highlights": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "position": {
+                                "type": "string",
+                                "enum": [
+                                    "left",
+                                    "right"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "skills": {
+            "type": "object",
+            "required": [
+                "heading",
+                "subtitle",
+                "categories"
+            ],
+            "properties": {
+                "heading": {
+                    "type": "string"
+                },
+                "subtitle": {
+                    "type": "string"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "icon",
+                            "heading",
+                            "description",
+                            "items"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "icon": {
+                                "type": "string"
+                            },
+                            "heading": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "items": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "name",
+                                        "level",
+                                        "percentage"
+                                    ],
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "level": {
+                                            "type": "string"
+                                        },
+                                        "percentage": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 100
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
