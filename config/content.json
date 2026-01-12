@@ -1,8 +1,8 @@
 {
     "$schema": "./content.schema.json",
     "header": {
-        "primaryHeading": "Richard Uzik",
-        "secondaryHeading": "Data Engineering Team Lead | Azure & Power Platform Specialist",
+        "primaryHeading": "Richard Užík",
+        "secondaryHeading": "Data Engineer Team Lead | Azure Specialist",
         "ctaText": "View my career path →"
     },
     "navigationCards": [
@@ -31,8 +31,8 @@
     "aboutMe": {
         "heading": "About Me",
         "eyebrow": "Azure Data Engineer & Team Lead",
-        "title": "Engineering reliable data solutions and leading technical teams in Bratislava",
-        "summary": "I’ve spent the last 8 years at Accenture evolving from a student developer into a Team Lead. My focus is on the how—bridging the gap between complex Azure architecture and the daily reality of shipping code. I don't just design systems; I stay hands-on to ensure they actually work in production while mentoring the next generation of engineers.",
+        "title": "Delivering complex Azure data architectures and AI-driven automation solutions",
+        "summary": "I’ve spent nine years growing from a student developer into a Technology Architect. Today, I lead teams building Azure data systems and AI tools for global banks and manufacturers. I still love tackling the hardest technical challenges, but my real focus is making work better through automation and mentoring",
         "facts": [
             {
                 "label": "Experience",
@@ -40,7 +40,7 @@
             },
             {
                 "label": "Role",
-                "value": "Data Engineering Team Lead"
+                "value": "Technical Team Lead"
             },
             {
                 "label": "Location",
@@ -48,31 +48,31 @@
             },
             {
                 "label": "Languages",
-                "value": "English, Slovak"
+                "value": "English C1, Slovak native"
             }
         ],
         "tags": [
             "Azure",
             "Data Engineering",
-            "Power Platform",
+            "AI & Automation",
             "CI/CD",
-            "Team Leadership"
+            "Team Coordination"
         ],
         "photoUrl": "assets/my-photo.jpg",
         "photoAlt": "Profile Photo",
         "mapLabel": "Based in Bratislava",
         "metrics": [
             {
-                "value": "8+ yrs",
-                "label": "At Accenture"
+                "value": "8 +",
+                "label": "Years of experience at Accenture"
             },
             {
-                "value": "Up to 4",
-                "label": "Concurrent Projects"
+                "value": "10 +",
+                "label": "Clients served globally"
             },
             {
-                "value": "2+ yrs",
-                "label": "Team Leading"
+                "value": "18 +",
+                "label": "Developers mentored"
             }
         ],
         "certificationsHeading": "Certifications",
@@ -99,148 +99,151 @@
     },
     "education": {
         "heading": "Education",
-        "subtitle": "Academic foundation built through specialized study in Computer Science and Information Technology",
+        "subtitle": "From a math-focused grammar school to building software and autonomous hardware systems",
         "timeline": [
             {
                 "period": "2010 - 2014",
                 "periodBadge": "2010 - 2014",
-                "subheading": "Where it started",
+                "subheading": "Foundational Logic",
                 "image": "/assets/high-school.jpg",
                 "imageAlt": "Albert Einstein Grammar School",
                 "title": "Grammar School",
                 "institution": "Albert Einstein's Grammar School, Bratislava",
-                "description": "Focus on Mathematics and Informatics, which provided the logical foundation for my move into computer science.",
+                "description": "I went to high school in Bratislava, where I naturally gravitated toward math and informatics. I ended up choosing those subjects for my final graduation exams, which gave me a solid head start before moving on to university.",
                 "position": "left"
             },
             {
                 "period": "2014 - 2017",
                 "periodBadge": "2014 - 2017",
-                "subheading": "First Steps",
+                "subheading": "Learning the Basics",
                 "image": "/assets/bachelors.jpeg",
                 "imageAlt": "Faculty of Electrical Engineering",
-                "title": "FEI STU Bratislava",
-                "institution": "Bachelor's Degree in Applied Informatics",
-                "description": "Gained foundational knowledge in computer science, software engineering, and information systems. Developed strong programming skills and understanding of core algorithms, data structures, and system design principles that formed the basis of my professional career.",
+                "title": "Bachelor's Degree in Applied Informatics",
+                "institution": "FEI STU, Bratislava",
+                "description": "During my bachelor's, I focused on the nuts and bolts of software and algorithms. I chose a math-based topic for my thesis because I wanted to understand the actual logic behind the code I was writing.",
                 "position": "right"
             },
             {
                 "period": "2017 - 2019",
                 "periodBadge": "2017 - 2019",
-                "subheading": "Advanced Studies",
+                "subheading": "Building Real Things",
                 "image": "/assets/masters.jpg",
                 "imageAlt": "Master's Studies",
-                "title": "FEI STU Bratislava",
-                "institution": "Master's Degree in Mechatronics",
-                "description": "Designed and built a small-scale autonomous vehicle (RC car platform). This project involved implementing navigation logic and sensor integration, sparking my interest in how data drives automated decision-making.",
+                "title": "Master's Degree in Mechatronics",
+                "institution": "FEI STU Bratislava",
+                "description": "I switched to Mechatronics to see how code could move actual hardware. For my final project, I programmed an RC car to track and follow objects on its own—my first real dive into autonomous systems.",
                 "position": "left"
             }
         ]
     },
     "experience": {
         "heading": "Professional Background",
-        "subtitle": "8+ years of progressive career growth across development, architecture, and leadership",
+        "subtitle": "Eight year progression from writing code to architecting data systems and leading engineering teams",
         "timeline": [
             {
-                "year": "2017",
+                "year": "2017-19",
                 "level": "junior",
                 "title": "Junior Developer",
-                "company": "Accenture",
-                "duration": "1 year",
-                "description": "I joined Accenture as a student, working on a project for an international company focused on sales. My role focused on learning technologies and development fundamentals.",
+                "company": "Global Window Manufacturer & Insurance Provider",
+                "duration": "2 years",
+                "description": "Started as a part-time student, managing Sitecore maintenance, bug-fixing, and DevOps pipelines. I focused on stability, improving deployment workflows, and supporting insurance application migrations to newer technical versions.",
                 "highlights": [
-                    "CI/CD Pipelines",
-                    "Error Tracing",
-                    "Bug Fixing"
-                ],
-                "position": "left"
-            },
-            {
-                "year": "2018",
-                "level": "junior",
-                "title": "Junior Developer",
-                "company": "Accenture (Multiple Clients)",
-                "duration": "1 year",
-                "description": "Worked for a Slovak insurance company and French software company. Transitioned to broader responsibilities as my contract expanded.",
-                "highlights": [
-                    "Client Change Requests",
-                    "Development Tasks",
-                    "CI/CD Management"
-                ],
-                "position": "right"
-            },
-            {
-                "year": "2019",
-                "level": "medior",
-                "title": "Medior Developer",
-                "company": "Accenture (Global Bank, German Energy Co.)",
-                "duration": "1 year",
-                "description": "Graduated and transitioned to full-time role managing 4 active projects simultaneously for major global clients. Took on full development lifecycle responsibilities.",
-                "highlights": [
-                    "Full Dev Lifecycle",
-                    "Performance Optimization",
-                    "Estimation & Planning"
+                    "Sitecore",
+                    "DevOps Pipelines",
+                    "Bug-Fixing",
+                    "C# / .NET"
                 ],
                 "position": "left"
             },
             {
                 "year": "2020",
-                "level": "senior",
-                "title": "Senior Developer",
-                "company": "Accenture (Infrastructure Global Company)",
+                "level": "medior",
+                "title": "Medior Developer",
+                "company": "Plumbing Solutions Provider & Consumer Finance",
                 "duration": "1 year",
-                "description": "Promoted to Senior level with responsibility for complex infrastructure projects. Led short-term migration initiatives and technical architecture decisions.",
+                "description": "Hired full-time after a promotion, I shifted into .NET Core and SharePoint development. I worked on diverse projects for finance and industrial clients, handling everything from application builds to migrations.",
                 "highlights": [
-                    "SharePoint Migration",
-                    "Technical Architecture",
-                    "Project Leadership"
+                    ".NET Core",
+                    "SharePoint",
+                    "App Dev",
+                    "Technical Migrations"
                 ],
                 "position": "right"
             },
             {
                 "year": "2021",
                 "level": "senior",
-                "title": "Senior Azure Developer",
-                "company": "Accenture (Data & AI Branch)",
-                "duration": "1+ year",
+                "title": "Senior Developer",
+                "company": "Aluminum Producer & Insurance Group",
+                "duration": "1 year",
                 "badge": "Certified: Azure Developer",
-                "description": "Spearheaded expansion into Data and AI domain. Responsible for development, mentoring junior colleagues, and delivering data-focused solutions on cloud platforms.",
+                "description": "Promoted to Senior, I pivoted into Azure Data Engineering. I began building data pipelines and siloed architectures, using GitHub Actions to automate deployments and improve infrastructure management.",
                 "highlights": [
-                    "Azure Cloud",
-                    "Data Engineering",
-                    "Team Mentoring",
-                    "AZ-204 Certified"
+                    "Azure Data Factory",
+                    "Data Architecture",
+                    "GitHub Actions",
+                    "Cloud Engineering"
                 ],
                 "position": "left"
             },
             {
                 "year": "2022",
-                "level": "lead",
-                "title": "Senior Team Lead",
-                "company": "Accenture (European Bank)",
-                "duration": "1+ year",
+                "level": "senior",
+                "title": "Specialist",
+                "company": "Major European Banking Group",
+                "duration": "1 year",
                 "badge": "Certified: Power Platform",
-                "description": "Promoted to Team Lead overseeing SharePoint modernization initiative. Led redesign of legacy systems to modern cloud-based solutions with process automation.",
+                "description": "Promoted to Specialist, I led a team building low-code solutions for banking policies. I managed the full lifecycle, from architecture design and estimations to leading and mentoring junior colleagues.",
                 "highlights": [
-                    "Team Leadership",
-                    "SharePoint Online",
                     "Power Platform",
-                    "PL-100 Certified"
+                    "Solution Architecture",
+                    "Team Leadership",
+                    "Logic Apps"
                 ],
                 "position": "right"
             },
             {
-                "year": "2023-25",
-                "level": "lead",
-                "title": "Data Engineering Team Lead",
-                "company": "Accenture",
-                "duration": "2+ years",
-                "badge": "Current Role",
-                "description": "Leading Data Engineering initiatives across multiple projects. Responsible for architecture decisions, team development, and delivery of enterprise-scale data solutions on Azure.",
+                "year": "2023",
+                "level": "senior",
+                "title": "Team Lead - Data & AI",
+                "company": "Industrial & Banking Leaders",
+                "duration": "1 year",
+                "description": "I balanced team leadership across multiple projects while deepening my expertise. I earned several certifications and focused on sharpening my leadership skills while maintaining a strong technical presence.",
                 "highlights": [
-                    "Data Architecture",
-                    "Azure & Cloud",
-                    "Team Management",
-                    "Enterprise Solutions"
+                    "PSM I",
+                    "Agile Leadership",
+                    "Technical Mentoring"
+                ],
+                "position": "left"
+            },
+            {
+                "year": "2024",
+                "level": "lead",
+                "title": "Associate Manager / Tech Architect",
+                "company": "Aluminum Production & Insurance Leaders",
+                "duration": "1 year",
+                "description": "Reaching Associate Manager and Architect status, I returned to leading insurance projects. I also began implementing RAG-based AI applications using Azure OpenAI to solve complex internal data lookups.",
+                "highlights": [
+                    "Generative AI",
+                    "RAG",
+                    "Technology Architecture",
+                    "Azure OpenAI"
+                ],
+                "position": "right"
+            },
+            {
+                "year": "2025",
+                "level": "lead",
+                "title": "Associate Manager / Deputy PM",
+                "company": "Aluminum Production & Insurance Leaders",
+                "duration": "1 years",
+                "badge": "Current Role",
+                "description": "Currently leading data engineering teams and serving as Deputy Project Manager. I'm driving our internal AI chatbot initiative and teaching the company how to code faster with AI agents.",
+                "highlights": [
+                    "Project Management",
+                    "AI Strategy",
+                    "GitHub Copilot",
+                    "Team Growth"
                 ],
                 "position": "left"
             }
