@@ -1,34 +1,175 @@
-# My Resume
+# Professional Resume Website
 
-## Branching
-**During develoment phase we work in development branch, no need for feature branches!**
-1. Create a new feature branch from based on development. Name of the branch should be follow this naming convention : 
-     * _feature-task-sasscomponentname_ for basic tasks
-     * _feature-bug-sasscomponentname_ for bugs
-2. Work in feature branch
-3. Make atomic commits (focus commit on one : file / component / functionality)
-4. Use short descriptive commit messages
-5. When work on feature is done, create pull reaquest for development
-6. Merge to development and delete feature branch
-7. Perform testing of website locally
-    * Just some manual testing of responsivity and basic functionality
-8. Create pull request to master
-9. Check if Github workflow succesfully deployed new version to Azure
+A modern, responsive resume website built with semantic HTML, SCSS, and vanilla JavaScript, featuring a JSON-based content management system and automated deployment to Azure.
 
-## Testing
-TODO 
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://www.richarduzik.eu/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-## Trello
-Visit [Trello](https://trello.com/b/G4SHVeE4/resume-board) called Resume Board.
-1. Always create atomic small tasks
-2. Track new ideas into tasks immediately
-3. Resolve / update tasks as soon as they are finished
+## 🚀 Live Demo
 
-## Environments
-**Production** environment is available either by
-* direct URL to Static website in Storage account : [https://rsmprdst.z16.web.core.windows.net](https://rsmprdst.z16.web.core.windows.net)
-* Azure CDN endpoint for Static website : [https://richarduzik-resume.azureedge.net](https://richarduzik-resume.azureedge.net)
+Visit the live website: **[richarduzik.eu](https://www.richarduzik.eu/)**
 
-**Test** environment is available either by
-* direct URL to Static website in Storage account : [https://rsmtstst.z16.web.core.windows.net](https://rsmtstst.z16.web.core.windows.net)
-* Azure CDN endpoint for Static website : [https://richarduzik-resume-test.azureedge.net](https://richarduzik-resume-test.azureedge.net)
+## ✨ Features
+
+- **📱 Fully Responsive Design** - Optimized for all devices and screen sizes
+- **🎨 Modern UI/UX** - Clean, professional design with smooth animations
+- **📝 JSON-Based Content** - Easy content updates without touching HTML
+- **⚡ Lightning Fast** - Served via Azure CDN for optimal performance
+- **🔄 CI/CD Pipeline** - Automated deployment using GitHub Actions
+- **♿ Accessible** - Built with semantic HTML and ARIA best practices
+- **🎯 SEO Optimized** - Structured data and meta tags for search engines
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **HTML5** - Semantic markup
+- **SCSS** - Modular styling with BEM methodology
+- **Vanilla JavaScript** - Dynamic content loading
+- **CSS Grid & Flexbox** - Modern layout techniques
+
+### Build Tools
+- **Sass** - CSS preprocessing
+- **PostCSS** - Autoprefixer for cross-browser compatibility
+- **npm-run-all** - Parallel task execution
+- **live-server** - Local development server
+
+### Deployment & Infrastructure
+- **Azure Static Web Apps** - Hosting on Azure Storage
+- **Azure CDN** - Global content delivery
+- **GitHub Actions** - Automated CI/CD pipeline
+
+## 📁 Project Structure
+
+```
+├── assets/          # Images and SVG files
+├── config/          # Content configuration
+│   ├── content.json          # Site content data
+│   └── content.schema.json   # JSON schema for validation
+├── css/             # Compiled CSS files
+├── js/              # JavaScript modules
+│   └── content-loader.js     # Dynamic content loader
+├── sass/            # SCSS source files
+│   ├── base/        # Base styles, animations, utilities
+│   ├── components/  # Component styles (BEM)
+│   ├── layouts/     # Layout grids
+│   └── pages/       # Page-specific styles
+├── .github/         # GitHub Actions workflows
+├── index.html       # Main page
+├── 404.html         # Error page
+└── package.json     # Dependencies and scripts
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/resume.git
+   cd resume
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm start
+   ```
+   This runs live-server and watches for SASS changes.
+
+4. **Open in browser**
+   Navigate to `http://localhost:8080`
+
+### Build for Production
+
+```bash
+npm run build:css
+```
+
+This command compiles, prefixes, and minifies the CSS for production.
+
+## 📝 Content Management
+
+### Updating Content
+
+All text content is managed through `config/content.json`:
+
+1. Edit the JSON file with your content
+2. Save changes
+3. Refresh your browser (no rebuild needed!)
+
+The content schema (`config/content.schema.json`) provides autocomplete and validation in VS Code.
+
+### Available Sections
+
+- **Header** - Site title and CTA
+- **Navigation Cards** - Main navigation elements
+- **About Me** - Profile summary with facts and metrics
+- **Education** - Educational timeline
+- **Experience** - Professional experience timeline
+- **Skills** - Categorized skill sets with proficiency levels
+
+See [`CONTENT_UPDATE_GUIDE.md`](CONTENT_UPDATE_GUIDE.md) for detailed instructions.
+
+## 🎨 Customization
+
+### Styling
+
+All styles are written in SCSS following BEM methodology:
+
+- **Colors & Variables**: Edit `sass/base/_base.scss`
+- **Components**: Modify files in `sass/components/`
+- **Layout**: Adjust `sass/layouts/_layout.scss`
+- **Animations**: Customize `sass/base/_animations.scss`
+
+After making changes, run:
+```bash
+npm run build:css
+```
+
+### Adding New Sections
+
+1. Add HTML structure to `index.html`
+2. Create corresponding SCSS file in `sass/components/`
+3. Import in `sass/main.scss`
+4. Add content data to `config/content.json`
+5. Update `js/content-loader.js` to populate new section
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+**Richard Uzik**
+
+- Website: [richarduzik.eu](https://www.richarduzik.eu/)
+- GitHub: [@richard-uzik-accenture](https://github.com/richard-uzik-accenture)
+
+## 🙏 Acknowledgments
+
+- Design inspiration from modern portfolio websites
+- Icons and assets from various open-source projects
+- Azure for reliable hosting and CDN services
+
+---
+
+**Note**: This is a personal resume website. Feel free to use it as a template for your own resume, but please update the content with your own information.

@@ -1,7 +1,7 @@
 {
-    "name": "Resume",
+    "name": "professional-resume-website",
     "version": "1.0.0",
-    "description": "My Resume Website",
+    "description": "A modern, responsive resume website with JSON-based content management and automated Azure deployment",
     "main": "index.js",
     "scripts": {
         "watch:sass": "sass --watch sass/main.scss:css/style.css",
@@ -13,8 +13,21 @@
         "build:css": "npm-run-all compile:sass prefix:css compress:css",
         "generate:favicons": "node generate-favicons.js"
     },
-    "author": "Richard",
-    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/resume.git"
+    },
+    "keywords": [
+        "resume",
+        "portfolio",
+        "website",
+        "sass",
+        "responsive",
+        "azure",
+        "static-site"
+    ],
+    "author": "Richard Uzik",
+    "license": "MIT",
     "devDependencies": {
         "autoprefixer": "^10.4.20",
         "concat": "^1.0.3",
