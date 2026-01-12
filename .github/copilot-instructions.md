@@ -1,9 +1,16 @@
 # Resume Website - AI Agent Instructions
 
 ## Project Overview
-A static resume website deployed to Azure Storage with CDN. Frontend-only project built with semantic HTML and SCSS, deployed via GitHub Actions CI/CD pipeline to Test/Production environments on Azure.
+A resume website deployed to Azure Storage with CDN. Built with semantic HTML, SCSS, and vanilla JavaScript for JSON-based content management. Deployed via GitHub Actions CI/CD pipeline to Test/Production environments on Azure.
 
 ## Architecture & Key Patterns
+
+### Content Management System
+- **JSON-based content**: All text content stored in `config/content.json` (header, navigation, about, education, experience, skills)
+- **Schema validation**: `config/content.schema.json` provides IntelliSense and validation in VS Code
+- **Dynamic loading**: `js/content-loader.js` fetches and populates HTML at runtime using vanilla JavaScript
+- **Update workflow**: Edit JSON → Save → Refresh browser (no HTML changes needed)
+- **Documentation**: See `config/README.md` and `CONTENT_UPDATE_GUIDE.md` for content management guides
 
 ### SASS Architecture
 - **File-first modular structure**: Each component, page, and layout has its own SCSS file
@@ -13,7 +20,7 @@ A static resume website deployed to Azure Storage with CDN. Frontend-only projec
   - Example: `.card__background--1`, `.header__heading--secondary`, `.btn--animated`
 - **Directory structure**:
   - `base/`: Animations, global styles, utility classes
-  - `components/`: Reusable UI elements (button, card, header, education, experience, skills, aboutme, return)
+  - `components/`: Reusable UI elements (button, card, header, education, experience, experience-card, skills, aboutme, return)
   - `layouts/`: Layout grids and containers
   - `pages/`: Page-specific styles (404, home)
 
@@ -76,6 +83,41 @@ A static resume website deployed to Azure Storage with CDN. Frontend-only projec
 - Link anchors match section IDs for navigation: `<a href="#education">`
 - Classes follow BEM: element name matches component name
 - Example: `<div class="card card--1">` with children `card__background`, `card__image`
+- Text content is loaded dynamically from JSON; HTML structure provides semantic skeleton only
+- Script loading: `<script src="js/content-loader.js" defer></script>` in `<head>`
+
+## Content Update Workflow
+
+### JSON Content System
+The site uses a centralized content management system that separates content from structure:
+
+1. **Content file**: `config/content.json` contains all text content organized by section:
+   - `header`: Site title, subtitle, CTA text
+   - `navigationCards`: Three main navigation card objects (id, heading, linkText, image, alt)
+   - `aboutMe`: Profile section (eyebrow, title, summary, facts array, tags array, metrics array, certifications array)
+   - `education`: Timeline array with education entries (period, periodBadge, subheading, image, title, institution, description, position)
+   - `experience`: Timeline array with experience entries (year, level, title, company, duration, badge, description, highlights array, position)
+   - `skills`: Categories array with skill groups (id, icon, heading, description, items array with name/level/percentage)
+
+2. **Schema validation**: `config/content.schema.json` provides autocomplete and validation in VS Code
+
+3. **Content loader**: `js/content-loader.js` is a vanilla JavaScript class that:
+   - Fetches JSON on page load
+   - Dynamically populates HTML elements using selectors
+   - Handles all sections: header, navigation cards, about, education, experience, skills
+   - Initialized automatically when DOM loads
+
+4. **Update process**:
+   - Edit `config/content.json` (auto-validation in VS Code)
+   - Save file
+   - Refresh browser (no build step needed for content)
+   - Deploy JSON file along with other assets
+
+### Content vs. Structure
+- **Never edit HTML** for text content changes—always update JSON
+- **Edit HTML only** for structural/layout changes (adding sections, modifying DOM structure)
+- **Edit SCSS** for styling changes
+- Content changes don't require CSS rebuild, only browser refresh
 
 ## Development Commands
 - `npm start` — Dev mode: live-server + SASS watch
@@ -83,15 +125,28 @@ A static resume website deployed to Azure Storage with CDN. Frontend-only projec
 - `npm run compile:sass` — SCSS → CSS (uncompressed)
 - `npm run watch:sass` — Auto-compile SCSS on changes
 - `npm run devserver` — Start live-server only
+- `npm run prefix:css` — Add vendor prefixes
+- `npm run compress:css` — Minify CSS
 
 ## File Structure for New Features
 1. **New component**: Create `sass/components/_componentname.scss` and import in `main.scss`
-2. **New page styles**: Create `sass/pages/pagename.scss` and import in `main.scss`
+2. **New page styles**: Create `sass/pages/_pagename.scss` and import in `main.scss`
 3. **HTML**: Add semantic markup with BEM classes matching component structure
 4. **Styling**: Use CSS variables and nest modifiers with `&--` syntax
+5. **Content**: Add data to `config/content.json` if dynamic text is needed, update schema if adding new fields
+
+## Important Files & Documentation
+- **Content management**: `CONTENT_UPDATE_GUIDE.md` (quick reference), `config/README.md` (detailed guide)
+- **Implementation docs**: `JSON_IMPLEMENTATION.md` (JSON system overview)
+- **Schema**: `config/content.schema.json` (content structure definition)
+- **Loader**: `js/content-loader.js` (content population logic)
 
 ## Important Notes
-- Static site (no JavaScript framework or backend logic)
+- Hybrid architecture: Static HTML structure + dynamic JSON content + SCSS styling
+- All text content managed via JSON—never hardcode text in HTML
 - All styling is compiled CSS; edit SCSS only, never `style.css` directly
+- JavaScript is minimal and focused on content loading only (no framework)
 - Test responsivity and basic functionality locally before pushing to development
+- Content changes require JSON updates + browser refresh (no rebuild)
+- Style changes require SASS compilation (`npm run build:css`)
 - Use Trello (Resume Board) to track tasks and ideas alongside GitHub issues
