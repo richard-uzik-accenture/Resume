@@ -28,6 +28,53 @@
 </head>
 
 <body>
+    <nav class="mobile-menu" aria-label="Mobile menu">
+        <button class="mobile-menu__toggle" aria-label="Toggle menu" aria-expanded="false">
+            <div class="mobile-menu__icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="mobile-menu__backdrop"></div>
+        <aside class="mobile-menu__panel" role="dialog" aria-label="Menu panel">
+            <div class="mobile-menu__actions">
+                <button class="mobile-menu__button" data-action="home">
+                    <span class="mobile-menu__icon-wrapper" aria-hidden="true">
+                        <svg>
+                            <use xlink:href="assets/sprites.svg#icon-home"></use>
+                        </svg>
+                    </span>
+                    <span>Home</span>
+                </button>
+                <a href="#" data-social="linkedin" class="mobile-menu__button">
+                    <span class="mobile-menu__icon-wrapper" aria-hidden="true">
+                        <svg>
+                            <use xlink:href="assets/sprites.svg#icon-linkedin-with-circle"></use>
+                        </svg>
+                    </span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="#" data-social="github" class="mobile-menu__button">
+                    <span class="mobile-menu__icon-wrapper" aria-hidden="true">
+                        <svg>
+                            <use xlink:href="assets/sprites.svg#icon-github"></use>
+                        </svg>
+                    </span>
+                    <span>GitHub</span>
+                </a>
+                <a href="#" data-social="email" class="mobile-menu__button">
+                    <span class="mobile-menu__icon-wrapper" aria-hidden="true">
+                        <svg>
+                            <use xlink:href="assets/sprites.svg#icon-email"></use>
+                        </svg>
+                    </span>
+                    <span>Email</span>
+                </a>
+            </div>
+        </aside>
+    </nav>
+
     <header class="header">
         <div class="header__box header__box--primary">
             <h1 class="header__heading header__heading--primary">My name is Richard</h1>
@@ -72,7 +119,7 @@
             </div>
         </section>
 
-        <section class="aboutme" id="aboutme">
+        <section class="aboutme tab-section is-active" id="aboutme" data-tab="aboutme">
             <h1 class="aboutme__heading">About Me</h1>
 
             <div class="aboutme__grid">
@@ -153,7 +200,7 @@
         </section>
 
 
-        <section class="education" id="education">
+        <section class="education tab-section" id="education" data-tab="education">
             <h1 class="education__heading">Education</h1>
             <p class="education__subtitle">Academic foundation built through specialized study in Computer Science and
                 Information Technology</p>
@@ -240,7 +287,7 @@
             </div>
         </section>
 
-        <section class="experience" id="experience">
+        <section class="experience tab-section" id="experience" data-tab="experience">
             <h1 class="experience__heading">Professional Background</h1>
             <p class="experience__subtitle">8+ years of progressive career growth across development, architecture, and
                 leadership</p>
@@ -401,7 +448,7 @@
             </div>
         </section>
 
-        <section class="skills" id="skills">
+        <section class="skills tab-section" id="skills" data-tab="skills">
             <h1 class="skills__heading">
                 <span class="skills__heading-text">My Core Expertise</span>
                 <span class="skills__heading-underline"></span>
@@ -627,6 +674,44 @@
             </div>
         </section>
     </main>
+
+    <nav class="mobile-tabs" aria-label="Primary mobile navigation" role="tablist">
+        <button class="mobile-tabs__item is-active" data-target="aboutme" role="tab" aria-selected="true"
+            aria-controls="aboutme">
+            <span class="mobile-tabs__icon" aria-hidden="true">
+                <svg>
+                    <use xlink:href="assets/sprites.svg#icon-emoji-flirt"></use>
+                </svg>
+            </span>
+            <span class="mobile-tabs__label">About</span>
+        </button>
+        <button class="mobile-tabs__item" data-target="education" role="tab" aria-selected="false"
+            aria-controls="education">
+            <span class="mobile-tabs__icon" aria-hidden="true">
+                <svg>
+                    <use xlink:href="assets/sprites.svg#icon-graduation-cap"></use>
+                </svg>
+            </span>
+            <span class="mobile-tabs__label">Education</span>
+        </button>
+        <button class="mobile-tabs__item" data-target="experience" role="tab" aria-selected="false"
+            aria-controls="experience">
+            <span class="mobile-tabs__icon" aria-hidden="true">
+                <svg>
+                    <use xlink:href="assets/sprites.svg#icon-briefcase"></use>
+                </svg>
+            </span>
+            <span class="mobile-tabs__label">Experience</span>
+        </button>
+        <button class="mobile-tabs__item" data-target="skills" role="tab" aria-selected="false" aria-controls="skills">
+            <span class="mobile-tabs__icon" aria-hidden="true">
+                <svg>
+                    <use xlink:href="assets/sprites.svg#icon-code"></use>
+                </svg>
+            </span>
+            <span class="mobile-tabs__label">Skills</span>
+        </button>
+    </nav>
 
     <footer class="social-links">
         <ul class="social-links__group">

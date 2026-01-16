@@ -284,13 +284,145 @@ class ContentLoader {
   }
 }
 
+// Mobile tab controller for app-like navigation
+class MobileTabs {
+  constructor() {
+    this.buttons = Array.from(document.querySelectorAll('.mobile-tabs__item'));
+    this.sections = new Map();
+    this.activeId = null;
+    this.mobileBreakpoint = window.matchMedia('(max-width: 820px)');
+  }
+
+  init() {
+    if (!this.buttons.length) return;
+
+    this.buttons.forEach((button) => {
+      const target = button.dataset.target;
+      const section = document.querySelector(`[data-tab="${target}"]`);
+      this.sections.set(target, section);
+    });
+
+    const defaultId = this.buttons.find((btn) => btn.classList.contains('is-active'))?.dataset.target
+      || this.buttons[0]?.dataset.target;
+    const hashId = window.location.hash.replace('#', '');
+    this.activeId = this.sections.has(hashId) ? hashId : defaultId;
+
+    this.buttons.forEach((button) => {
+      button.addEventListener('click', () => this.setActive(button.dataset.target));
+    });
+
+    // Mobile appbar home action: activate About tab and scroll to top
+    const homeBtn = document.querySelector('[data-action="home"]');
+    if (homeBtn) {
+      homeBtn.addEventListener('click', () => {
+        this.setActive('aboutme');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    this.mobileBreakpoint.addEventListener('change', (event) => this.handleBreakpoint(event.matches));
+
+    this.handleBreakpoint(this.mobileBreakpoint.matches);
+  }
+
+  setActive(targetId, updateHistory = true) {
+    if (!targetId || !this.sections.has(targetId)) return;
+
+    this.activeId = targetId;
+
+    this.buttons.forEach((button) => {
+      const isActive = button.dataset.target === targetId;
+      button.classList.toggle('is-active', isActive);
+      button.setAttribute('aria-selected', String(isActive));
+      button.setAttribute('tabindex', isActive ? '0' : '-1');
+    });
+
+    this.sections.forEach((section, id) => {
+      if (!section) return;
+      section.classList.toggle('is-active', id === targetId);
+    });
+
+    if (updateHistory && window.location.hash !== `#${targetId}`) {
+      history.replaceState(null, '', `#${targetId}`);
+    }
+  }
+
+  handleBreakpoint(isMobile) {
+    if (!isMobile) {
+      this.buttons.forEach((button) => button.setAttribute('tabindex', '0'));
+      return;
+    }
+
+    this.setActive(this.activeId || this.buttons[0]?.dataset.target, false);
+  }
+}
+
+// Mobile menu toggle controller
+class MobileMenu {
+  constructor() {
+    this.toggle = document.querySelector('.mobile-menu__toggle');
+    this.panel = document.querySelector('.mobile-menu__panel');
+    this.backdrop = document.querySelector('.mobile-menu__backdrop');
+    this.isOpen = false;
+  }
+
+  init() {
+    if (!this.toggle || !this.panel) return;
+
+    this.toggle.addEventListener('click', () => this.toggleMenu());
+    this.backdrop.addEventListener('click', () => this.closeMenu());
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) this.closeMenu();
+    });
+
+    // Close menu when clicking any action inside
+    const actions = this.panel.querySelectorAll('.mobile-menu__button');
+    actions.forEach(action => {
+      action.addEventListener('click', () => {
+        setTimeout(() => this.closeMenu(), 150);
+      });
+    });
+  }
+
+  toggleMenu() {
+    this.isOpen ? this.closeMenu() : this.openMenu();
+  }
+
+  openMenu() {
+    this.isOpen = true;
+    this.toggle.classList.add('is-open');
+    this.panel.classList.add('is-open');
+    this.backdrop.classList.add('is-open');
+    this.toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeMenu() {
+    this.isOpen = false;
+    this.toggle.classList.remove('is-open');
+    this.panel.classList.remove('is-open');
+    this.backdrop.classList.remove('is-open');
+    this.toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+}
+
 // Initialize content loader when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    const loader = new ContentLoader();
-    loader.init();
-  });
-} else {
+const bootstrap = () => {
   const loader = new ContentLoader();
   loader.init();
+
+  const tabs = new MobileTabs();
+  tabs.init();
+
+  const menu = new MobileMenu();
+  menu.init();
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bootstrap);
+} else {
+  bootstrap();
 }

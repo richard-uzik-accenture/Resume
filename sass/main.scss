@@ -13,3 +13,5 @@
 @use "components/_aboutme.scss" as *;
 @use "pages/404" as *;
 @use "pages/home" as *;
+@use "components/mobile-tabs" as *;
+@use "components/mobile-appbar" as *;
