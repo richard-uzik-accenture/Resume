@@ -13,15 +13,6 @@
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-
-    @media (max-width: 768px) {
-        margin-top: 2rem;
-    }
-
-    @media (max-width: 480px) {
-        margin-top: 1.5rem;
-    }
-
     background-image: linear-gradient(160deg,
         rgba(10, 53, 92, 0.12) 0%,
         rgba(0, 133, 189, 0.08) 45%,
@@ -37,6 +28,14 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+    @media (max-width: 768px) {
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 480px) {
+        margin-top: 1.5rem;
+    }
 
     // Animated gradient overlay
     &::before {
@@ -201,6 +200,8 @@
         position: relative;
         cursor: default;
         transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        opacity: 0;
+        transform: translateY(5rem) scale(0.95);
 
         @media (max-width: 768px) {
             min-width: 20rem;
@@ -209,9 +210,6 @@
         @media (max-width: 600px) {
             min-width: auto;
         }
-
-        opacity: 0;
-        transform: translateY(5rem) scale(0.95);
 
         // Staggered animation
         &:nth-child(1) {
