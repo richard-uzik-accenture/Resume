@@ -1,11 +1,14 @@
 /**
  * Content Loader - Dynamically loads text content from JSON configuration
+ * Optimized for mobile performance
  */
 
 class ContentLoader {
   constructor(configPath = '/config/content.json') {
     this.configPath = configPath;
     this.config = null;
+    this.isMobile = window.matchMedia('(max-width: 768px)').matches;
+    this.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 
   async init() {
@@ -15,7 +18,13 @@ class ContentLoader {
         throw new Error(`Failed to load config: ${response.status}`);
       }
       this.config = await response.json();
-      this.loadAllContent();
+
+      // Use requestIdleCallback for non-critical loading on mobile
+      if (this.isMobile && 'requestIdleCallback' in window) {
+        requestIdleCallback(() => this.loadAllContent(), { timeout: 2000 });
+      } else {
+        this.loadAllContent();
+      }
     } catch (error) {
       console.error('Error loading content configuration:', error);
     }

@@ -11,13 +11,15 @@ Visit the live website: **[richarduzik.eu](https://www.richarduzik.eu/)**
 
 ## ✨ Features
 
-- **📱 Fully Responsive Design** - Optimized for all devices and screen sizes
-- **🎨 Modern UI/UX** - Clean, professional design with smooth animations
+- **📱 Fully Responsive Design** - Mobile-first approach optimized for all devices (320px - 1920px+)
+- **🎨 Modern UI/UX** - Clean, professional design with smooth animations and touch interactions
 - **📝 JSON-Based Content** - Easy content updates without touching HTML
-- **⚡ Lightning Fast** - Served via Azure CDN for optimal performance
+- **⚡ Lightning Fast** - Served via Azure CDN with performance optimizations
 - **🔄 CI/CD Pipeline** - Automated deployment using GitHub Actions
-- **♿ Accessible** - Built with semantic HTML and ARIA best practices
+- **♿ Accessible** - WCAG 2.1 compliant with semantic HTML and ARIA best practices
 - **🎯 SEO Optimized** - Structured data and meta tags for search engines
+- **🎭 Touch-Optimized** - 44px minimum touch targets, disabled hover on touch devices
+- **🌐 Progressive Enhancement** - Works on all browsers with graceful degradation
 
 ## 🛠️ Tech Stack
 
@@ -142,6 +144,34 @@ npm run build:css
 3. Import in `sass/main.scss`
 4. Add content data to `config/content.json`
 5. Update `js/content-loader.js` to populate new section
+
+## 📱 Mobile Optimization
+
+This website is fully optimized for mobile devices with a mobile-first approach:
+
+### Responsive Breakpoints
+- **320px** - Small phones (iPhone SE, older devices)
+- **375px** - Standard phones (iPhone 13 mini)
+- **480px** - Large phones and phablets
+- **768px** - Tablets (portrait)
+- **1024px** - Tablets (landscape) and small desktops
+- **1280px+** - Desktop and wide screens
+
+### Mobile Features
+- **Fluid Typography** - `clamp()` for responsive text scaling
+- **Touch Interactions** - Minimum 44x44px touch targets (WCAG compliant)
+- **Performance** - Optimized animations with `will-change` and reduced complexity on mobile
+- **Accessibility** - `prefers-reduced-motion` support, focus states, keyboard navigation
+- **iOS Support** - Safe area insets for notched devices
+- **Progressive Grid** - Skills (4→3→2→1 cols), Timeline (alternating→stacked)
+
+### Performance Targets
+- Lighthouse Mobile Score: >90
+- First Contentful Paint: <2s
+- Largest Contentful Paint: <2.5s
+- Cumulative Layout Shift: <0.1
+
+See [`docs/MOBILE_OPTIMIZATION_PLAN.md`](docs/MOBILE_OPTIMIZATION_PLAN.md) for complete implementation details and [`docs/MOBILE_TESTING_CHECKLIST.md`](docs/MOBILE_TESTING_CHECKLIST.md) for testing procedures.
 
 ## 🤝 Contributing
 

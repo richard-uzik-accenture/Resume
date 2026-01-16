@@ -25,4 +25,32 @@
         box-shadow: 0 2rem 6rem rgba(#000, 0.4);
         border-bottom-color: var(--color-primary-light);
     }
+
+    // Mobile optimizations
+    @media (max-width: 768px) {
+        padding: 0 1.5rem;
+
+        &:hover {
+            transform: scale(1.02) translateY(-1px); // Reduce hover effect
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 0 1rem;
+        border-bottom-width: 1px;
+    }
+
+    // Touch devices - disable problematic hover effects
+    @media (hover: none) and (pointer: coarse) {
+        &:hover {
+            background-color: rgba(#000, 0.1);
+            transform: none;
+            box-shadow: none;
+            border-bottom-color: currentColor;
+        }
+
+        &:active {
+            background-color: rgba(#aaa, 0.15);
+        }
+    }
 }

@@ -1,13 +1,18 @@
 .btn-transparent {
+
     &:link,
     &:visited {
-        font-size: 1.6rem;
+        font-size: clamp(1.4rem, 2vw, 1.6rem);
         text-transform: uppercase;
         text-decoration: underline;
         text-underline-offset: .5rem;
-        padding: 1rem 2rem;
+        padding: 1.2rem 2.4rem;
+        min-height: var(--touch-target-min); // WCAG touch target
+        min-width: 150px;
         color: currentColor;
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         border: none;
         border-radius: 100px;
         cursor: pointer;
@@ -27,10 +32,49 @@
         transform: scale(1.2) rotate(5deg) translateY(-0.1rem);
         box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
     }
+
+    // Mobile optimizations
+    @media (max-width: 768px) {
+
+        &:link,
+        &:visited {
+            padding: 1.2rem 2rem;
+            min-width: 140px;
+        }
+    }
+
+    @media (max-width: 480px) {
+
+        &:link,
+        &:visited {
+            padding: 1rem 1.8rem;
+            min-width: 120px;
+            font-size: 1.4rem;
+        }
+    }
+
+    // Touch devices - optimize interactions
+    @media (hover: none) and (pointer: coarse) {
+        &:hover {
+            background-color: transparent;
+            transform: none;
+            box-shadow: none;
+        }
+
+        &:active {
+            background-color: rgba(#aaa, 0.2);
+            transform: scale(0.97);
+            box-shadow: 0 0.5rem 1rem rgba(#000, 0.3);
+        }
+    }
 }
 
 .btn {
     &--animated {
         animation: fadu-up 0.75s ease-out;
+
+        @media (max-width: 480px) {
+            animation-duration: 0.5s; // Faster on mobile
+        }
     }
 }

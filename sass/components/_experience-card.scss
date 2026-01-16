@@ -332,6 +332,144 @@
     }
 }
 
+// Mobile Optimizations
+@media (max-width: 1024px) {
+    .experience__card {
+        max-width: 100%;
+
+        &--left,
+        &--right {
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &__content {
+            padding: 2.5rem 2rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .experience__card {
+        margin: 2rem 0;
+
+        &__content {
+            padding: 2rem 1.5rem;
+        }
+
+        &__header {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left-width: 2px;
+        }
+
+        &__title {
+            font-size: clamp(2rem, 5vw, 2.4rem);
+            margin-bottom: 0.6rem;
+        }
+
+        &__company {
+            font-size: clamp(1.5rem, 3.5vw, 1.7rem);
+            margin-bottom: 1rem;
+        }
+
+        &__duration,
+        &__badge {
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        &__description {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        &__highlights {
+            gap: 0.6rem;
+        }
+
+        &__highlight {
+            font-size: 1.2rem;
+            padding: 0.6rem 1.2rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .experience__card {
+        margin: 1.5rem 0;
+
+        &__content {
+            padding: 1.5rem 1.25rem;
+            border-left-width: 3px;
+        }
+
+        &__header {
+            padding-left: 0.75rem;
+        }
+
+        &__title {
+            font-size: 1.8rem;
+            letter-spacing: 0.3px;
+        }
+
+        &__company {
+            font-size: 1.4rem;
+            flex-wrap: wrap;
+        }
+
+        &__duration,
+        &__badge {
+            font-size: 1rem;
+            padding: 0.4rem 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        &__description {
+            font-size: 1.4rem;
+        }
+
+        &__highlights {
+            gap: 0.5rem;
+        }
+
+        &__highlight {
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+}
+
+// Touch device optimizations
+@media (hover: none) and (pointer: coarse) {
+    .experience__card__content {
+        &:hover {
+            transform: none;
+            box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.12);
+            border-left-width: 4px;
+        }
+
+        &:active {
+            transform: scale(0.99);
+            box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .experience__card__highlight {
+        &:hover {
+            background: rgba(0, 133, 189, 0.08);
+            border-color: rgba(0, 133, 189, 0.2);
+            transform: none;
+        }
+
+        &:active {
+            background: rgba(0, 133, 189, 0.15);
+        }
+    }
+}
+
 @keyframes highlightsFadeIn {
     from {
         opacity: 0;

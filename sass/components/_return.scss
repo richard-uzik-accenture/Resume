@@ -81,13 +81,52 @@
         right: 2rem;
 
         &__link {
-            width: 4.5rem;
-            height: 4.5rem;
+            width: 4.8rem; // Minimum touch target
+            height: 4.8rem;
         }
 
         &__icon {
             height: 2.2rem;
             width: 2.2rem;
+        }
+    }
+}
+
+// Touch device optimizations
+@media (hover: none) and (pointer: coarse) {
+    .return {
+        &__link {
+            &:hover {
+                background: linear-gradient(135deg,
+                        rgba(10, 53, 92, 0.4) 0%,
+                        rgba(0, 133, 189, 0.3) 100%);
+                transform: none;
+                box-shadow:
+                    0 2px 8px rgba(0, 0, 0, 0.15),
+                    0 4px 16px rgba(0, 0, 0, 0.2),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            }
+
+            &:active {
+                background: linear-gradient(135deg,
+                        rgba(0, 133, 189, 0.6) 0%,
+                        rgba(0, 170, 189, 0.5) 100%);
+                transform: scale(0.95);
+                box-shadow:
+                    0 1px 4px rgba(0, 0, 0, 0.1),
+                    0 2px 8px rgba(0, 0, 0, 0.15),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            }
+        }
+
+        &__link:hover &__icon {
+            fill: var(--color-white);
+            animation: none;
+        }
+
+        &__link:active &__icon {
+            fill: var(--color-white);
+            animation: icon-rotate 0.3s ease-in-out;
         }
     }
 }

@@ -5,7 +5,7 @@
     justify-content: center;
     color: var(--color-dark-ultra);
     margin-top: 3.5rem;
-    padding: 8rem 3.5rem;
+    padding: clamp(4rem, 8vw, 8rem) clamp(2rem, 5vw, 3.5rem);
     flex-wrap: wrap;
     position: relative;
     overflow: hidden;
@@ -14,18 +14,25 @@
     margin-left: auto;
     margin-right: auto;
 
-    background-image:
-        linear-gradient(160deg,
-            rgba(10, 53, 92, 0.12) 0%,
-            rgba(0, 133, 189, 0.08) 45%,
-            rgba(0, 204, 164, 0.12) 100%),
-        linear-gradient(to bottom,
-            var(--color-white) 0%,
-            rgba(255, 255, 255, 0.96) 5%,
-            rgba(255, 255, 255, 0.9) 25%,
-            rgba(255, 255, 255, 0.9) 75%,
-            rgba(255, 255, 255, 0.96) 95%,
-            var(--color-white) 100%);
+    @media (max-width: 768px) {
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 480px) {
+        margin-top: 1.5rem;
+    }
+
+    background-image: linear-gradient(160deg,
+        rgba(10, 53, 92, 0.12) 0%,
+        rgba(0, 133, 189, 0.08) 45%,
+        rgba(0, 204, 164, 0.12) 100%),
+    linear-gradient(to bottom,
+        var(--color-white) 0%,
+        rgba(255, 255, 255, 0.96) 5%,
+        rgba(255, 255, 255, 0.9) 25%,
+        rgba(255, 255, 255, 0.9) 75%,
+        rgba(255, 255, 255, 0.96) 95%,
+        var(--color-white) 100%);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -61,6 +68,14 @@
         margin-bottom: var(--section-gap);
         animation: fade-up 0.8s ease-out;
 
+        @media (max-width: 768px) {
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 480px) {
+            margin-bottom: 2rem;
+        }
+
         &-text {
             background: var(--heading-gradient);
             background-size: 200% auto;
@@ -82,14 +97,27 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        &:hover &-text {
-            transform: translateY(-0.5rem) scale(1.05);
-            letter-spacing: 1rem;
+        @media (hover: hover) and (pointer: fine) {
+            &:hover &-text {
+                transform: translateY(-0.5rem) scale(1.05);
+                letter-spacing: 1rem;
+            }
+
+            &:hover &-underline {
+                width: 20rem;
+                box-shadow: 0 0 2rem rgba(var(--color-primary-light-rgb), 0.6);
+            }
         }
 
-        &:hover &-underline {
-            width: 20rem;
-            box-shadow: 0 0 2rem rgba(var(--color-primary-light-rgb), 0.6);
+        @media (max-width: 480px) {
+            &-text {
+                font-size: clamp(2.2rem, 6vw, 3rem);
+            }
+
+            &-underline {
+                margin-top: 1rem;
+                height: .3rem;
+            }
         }
     }
 
@@ -101,6 +129,16 @@
         opacity: 0;
         animation: fade-up 0.8s ease-out 0.3s forwards;
         z-index: 1;
+
+        @media (max-width: 768px) {
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            margin-bottom: 3rem;
+            letter-spacing: 0.1rem;
+        }
+
+        @media (max-width: 480px) {
+            margin-bottom: 2rem;
+        }
     }
 
     &__main {
@@ -115,14 +153,29 @@
 
         @media (max-width: 1200px) {
             grid-template-columns: repeat(3, minmax(28rem, 1fr));
+            column-gap: 3.5rem;
+            row-gap: 3rem;
         }
 
         @media (max-width: 900px) {
             grid-template-columns: repeat(2, minmax(24rem, 1fr));
+            column-gap: 2.5rem;
+            row-gap: 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, minmax(20rem, 1fr));
+            column-gap: 2rem;
+            row-gap: 2rem;
         }
 
         @media (max-width: 600px) {
             grid-template-columns: 1fr;
+            row-gap: 2rem;
+        }
+
+        @media (max-width: 480px) {
+            row-gap: 1.5rem;
         }
     }
 
@@ -136,7 +189,7 @@
         border-radius: var(--large-radius);
         border: 1px solid rgba(255, 255, 255, 0.8);
 
-        padding: 4rem 3.5rem;
+        padding: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3.5rem);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -148,6 +201,14 @@
         position: relative;
         cursor: default;
         transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        @media (max-width: 768px) {
+            min-width: 20rem;
+        }
+
+        @media (max-width: 600px) {
+            min-width: auto;
+        }
 
         opacity: 0;
         transform: translateY(5rem) scale(0.95);
@@ -190,20 +251,29 @@
             pointer-events: none;
         }
 
-        &:hover {
-            transform: translateY(-1.5rem) scale(1.02);
-            box-shadow:
-                0 2.5rem 6rem rgba(0, 0, 0, 0.2),
-                0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                transform: translateY(-1.5rem) scale(1.02);
+                box-shadow:
+                    0 2.5rem 6rem rgba(0, 0, 0, 0.2),
+                    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
 
-            background: rgba(255, 255, 255, 0.80);
+                background: rgba(255, 255, 255, 0.80);
 
-            &::before {
-                opacity: 1;
+                &::before {
+                    opacity: 1;
+                }
+
+                .skills__box__icon svg {
+                    transform: scale(1.15) rotateY(360deg);
+                }
             }
+        }
 
-            .skills__box__icon svg {
-                transform: scale(1.15) rotateY(360deg);
+        @media (hover: none) and (pointer: coarse) {
+            &:active {
+                transform: scale(0.98);
+                background: rgba(255, 255, 255, 0.75);
             }
         }
 
@@ -237,9 +307,9 @@
         }
 
         &__icon {
-            width: 6rem;
-            height: 6rem;
-            margin-bottom: 2rem;
+            width: clamp(5rem, 10vw, 6rem);
+            height: clamp(5rem, 10vw, 6rem);
+            margin-bottom: clamp(1.5rem, 3vw, 2rem);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -248,50 +318,60 @@
             box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 
             svg {
-                width: 3.5rem;
-                height: 3.5rem;
+                width: clamp(3rem, 6vw, 3.5rem);
+                height: clamp(3rem, 6vw, 3.5rem);
                 fill: var(--color-white);
                 transition: transform .6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             }
         }
 
         &__heading {
-            font-size: 2.8rem;
+            font-size: clamp(2.2rem, 4vw, 2.8rem);
             font-weight: 700;
             color: var(--color-primary-ultra);
             text-align: center;
             margin-bottom: 0.8rem;
             letter-spacing: 0.1rem;
-            min-height: 7rem;
+            min-height: clamp(5rem, 12vw, 7rem);
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @media (max-width: 480px) {
+                min-height: auto;
+                padding: 0.5rem 0;
+            }
         }
 
         &__description {
-            font-size: 1.5rem;
+            font-size: clamp(1.3rem, 2.5vw, 1.5rem);
             font-weight: 400;
             color: var(--color-grey-dark);
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: clamp(2rem, 4vw, 3rem);
             opacity: 0.85;
-            min-height: 5rem;
+            min-height: clamp(4rem, 8vw, 5rem);
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @media (max-width: 480px) {
+                min-height: auto;
+                padding: 0.5rem 0;
+            }
         }
 
         &__list {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: clamp(1rem, 2vw, 1.5rem);
         }
 
         &__item {
             list-style: none;
             position: relative;
-            padding: 1.5rem;
+            padding: clamp(1.2rem, 2.5vw, 1.5rem);
             background: rgba(255, 255, 255, 0.6);
             border-radius: var(--default-radius);
             border: 1px solid rgba(var(--color-primary-dark-rgb), 0.1);
@@ -306,6 +386,10 @@
             opacity: 0;
             animation: skill-item-fade 0.4s ease-out forwards;
 
+            @media (max-width: 480px) {
+                gap: 0.6rem;
+            }
+
             // Staggered item animation
             @for $i from 1 through 10 {
                 &:nth-child(#{$i}) {
@@ -314,33 +398,45 @@
             }
 
             .skill-name {
-                font-size: 1.7rem;
+                font-size: clamp(1.4rem, 3vw, 1.7rem);
                 font-weight: 600;
                 color: var(--color-primary-ultra);
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                gap: 1rem;
             }
 
             .skill-level {
-                font-size: 1.2rem;
+                font-size: clamp(1.1rem, 2vw, 1.2rem);
                 font-weight: 500;
                 color: var(--color-primary);
                 letter-spacing: 0.05rem;
                 text-transform: uppercase;
                 opacity: 0.8;
+                white-space: nowrap;
             }
 
-            &:hover {
-                transform: translateX(0.8rem);
-                background: rgba(255, 255, 255, 0.95);
-                box-shadow:
-                    -0.4rem 0 0 var(--color-primary),
-                    0 0.5rem 2rem rgba(0, 0, 0, 0.15);
-                border-color: rgba(var(--color-primary-dark-rgb), 0.3);
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    transform: translateX(0.8rem);
+                    background: rgba(255, 255, 255, 0.95);
+                    box-shadow:
+                        -0.4rem 0 0 var(--color-primary),
+                        0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+                    border-color: rgba(var(--color-primary-dark-rgb), 0.3);
 
-                .skill-bar__fill {
-                    box-shadow: 0 0 1.5rem rgba(var(--color-primary-light-rgb), 0.6);
+                    .skill-bar__fill {
+                        box-shadow: 0 0 1.5rem rgba(var(--color-primary-light-rgb), 0.6);
+                    }
+                }
+            }
+
+            @media (hover: none) and (pointer: coarse) {
+                &:active {
+                    transform: scale(0.98);
+                    background: rgba(255, 255, 255, 0.85);
+                    border-color: rgba(var(--color-primary-dark-rgb), 0.2);
                 }
             }
         }
@@ -350,11 +446,15 @@
 // Proficiency Bar Styles
 .skill-bar {
     width: 100%;
-    height: 0.6rem;
+    height: clamp(0.5rem, 1vw, 0.6rem);
     background: rgba(var(--color-grey-dark-rgb), 0.15);
     border-radius: 10rem;
     overflow: hidden;
     position: relative;
+
+    @media (max-width: 480px) {
+        height: 0.5rem;
+    }
 
     &__fill {
         height: 100%;

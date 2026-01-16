@@ -56,16 +56,26 @@
     --content-max-width: 1100px;
     --content-max-wide: 1280px;
 
-    // Typography scale
-    --heading-main-size: 4.4rem;
+    // Typography scale - fluid sizing with clamp() for responsive text
+    --heading-main-size: clamp(2.4rem, 5vw + 1rem, 4.4rem);
     --heading-main-weight: 700;
-    --heading-main-letter: 0.6rem;
-    --heading-sub-size: 2.6rem;
+    --heading-main-letter: clamp(0.2rem, 0.5vw, 0.6rem);
+    --heading-sub-size: clamp(1.8rem, 3vw + 0.5rem, 2.6rem);
     --heading-sub-weight: 600;
-    --heading-card-size: 1.8rem;
+    --heading-card-size: clamp(1.6rem, 2vw + 0.4rem, 2rem);
     --heading-card-weight: 600;
-    --subtitle-size: 1.8rem;
+    --subtitle-size: clamp(1.5rem, 2vw, 1.8rem);
     --subtitle-weight: 400;
+    --body-text-size: clamp(1.4rem, 1.5vw, 1.6rem);
+    --small-text-size: clamp(1.2rem, 1.3vw, 1.4rem);
+
+    // Line heights for readability
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.6;
+    --line-height-relaxed: 1.8;
+
+    // Touch target minimum (WCAG guideline)
+    --touch-target-min: 44px;
 
     // Gradient for section headings
     --heading-gradient: linear-gradient(to right, #0a355c 0%, #145da0 30%, #00aabd 70%, #00CCA4 100%);
@@ -96,6 +106,19 @@ html {
     box-sizing: border-box;
     font-size: 62.5%; //1rem = 10px, 10px / 16px = 0.625
     scroll-behavior: smooth;
+
+    // Adjust base font size for better mobile readability
+    @media (max-width: 768px) {
+        font-size: 60%; // Slightly smaller on tablets
+    }
+
+    @media (max-width: 480px) {
+        font-size: 58%; // Optimize for small phones
+    }
+
+    @media (max-width: 375px) {
+        font-size: 56%; // Very small screens (iPhone SE, etc.)
+    }
 }
 
 body {
@@ -106,27 +129,114 @@ body {
     padding: var(--section-padding-horizontal);
 }
 
-// Responsive breakpoints - adjust spacing variables
+// Responsive breakpoints - Mobile-First Progressive Enhancement
+// Tablet portrait & large phones (768px and below)
 @media (max-width: 768px) {
     :root {
-        --section-spacing-top: 2.5rem;
-        --section-spacing-bottom: 2.5rem;
-        --section-padding-vertical: 3rem;
-        --section-padding-horizontal: 2rem;
-        --section-gap: 2rem;
-        --heading-main-size: 3.2rem;
-        --heading-sub-size: 2rem;
+        --section-spacing-top: clamp(2rem, 4vw, 2.5rem);
+        --section-spacing-bottom: clamp(2rem, 4vw, 2.5rem);
+        --section-padding-vertical: clamp(2.5rem, 5vw, 3rem);
+        --section-padding-horizontal: clamp(1.5rem, 4vw, 2rem);
+        --section-gap: clamp(1.5rem, 3vw, 2rem);
+        --header-backdrop-blur: 6px;
+    }
+
+    body {
+        padding: var(--section-padding-horizontal);
     }
 }
 
+// Large phones & phablets (480px and below)
 @media (max-width: 480px) {
     :root {
         --section-spacing-top: 1.5rem;
         --section-spacing-bottom: 1.5rem;
         --section-padding-vertical: 2rem;
-        --section-padding-horizontal: 1.5rem;
+        --section-padding-horizontal: 1.25rem;
         --section-gap: 1.5rem;
-        --heading-main-size: 2.8rem;
-        --heading-sub-size: 1.8rem;
+        --default-radius: 0.8rem;
+        --large-radius: 1.5rem;
+        --header-backdrop-blur: 4px;
+    }
+}
+
+// Standard modern phones (375px and below - iPhone 13 mini, etc.)
+@media (max-width: 375px) {
+    :root {
+        --section-padding-horizontal: 1rem;
+        --section-gap: 1.25rem;
+    }
+}
+
+// Small phones (320px - iPhone SE, older devices)
+@media (max-width: 320px) {
+    :root {
+        --section-padding-horizontal: 0.75rem;
+        --section-padding-vertical: 1.5rem;
+    }
+}
+
+// Accessibility: Respect user's motion preferences
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+// Focus states for keyboard navigation (a11y)
+*:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: var(--default-small);
+}
+
+// Mobile-specific enhancements
+@media (max-width: 768px) {
+
+    // Prevent text size adjustment on orientation change
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    // Improve tap target spacing
+    a,
+    button,
+    input,
+    select,
+    textarea {
+        margin: 0.25rem 0;
+    }
+
+    // Disable hover effects on touch devices to prevent sticky hover states
+    @media (hover: none) {
+
+        a:hover,
+        button:hover {
+            // Touch devices should rely on active states instead
+        }
+    }
+}
+
+// Smooth scroll with safe area insets for iOS devices
+@supports (padding: max(0px)) {
+    body {
+        padding-left: max(var(--section-padding-horizontal), env(safe-area-inset-left));
+        padding-right: max(var(--section-padding-horizontal), env(safe-area-inset-right));
     }
 }

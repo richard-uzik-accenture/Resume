@@ -14,6 +14,21 @@
     }
 }
 
+// Mobile-optimized version
+@media (max-width: 768px) {
+    @keyframes fade-left {
+        0% {
+            opacity: 0;
+            transform: translateX(-10rem);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
 @keyframes fade-right {
     0% {
         opacity: 0;
@@ -27,6 +42,21 @@
     100% {
         opacity: 1;
         transform: translateX(0rem) scale(1);
+    }
+}
+
+// Mobile-optimized version
+@media (max-width: 768px) {
+    @keyframes fade-right {
+        0% {
+            opacity: 0;
+            transform: translateX(10rem);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 }
 
@@ -168,5 +198,72 @@
             0 3px 12px rgba(#000, 0.12),
             0 6px 20px rgba(#000, 0.16),
             inset 0 1px 0 rgba(#fff, 0.3);
+    }
+}
+
+// Performance optimizations for animations
+// Add will-change to elements that will animate
+.header__heading,
+.card,
+.education__box,
+.experience__card,
+.skills__box {
+    will-change: transform, opacity;
+
+    @media (prefers-reduced-motion: reduce) {
+        will-change: auto;
+    }
+}
+
+// Remove will-change after animations complete to free up resources
+@media (hover: hover) {
+
+    .header__heading,
+    .card,
+    .education__box,
+    .experience__card,
+    .skills__box {
+        &:not(:hover):not(:focus) {
+            will-change: auto;
+        }
+    }
+}
+
+// Reduced motion: simplify or disable animations
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    // Keep opacity transitions for better UX
+    .fade-left,
+    .fade-right,
+    .fadu-up {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+// Mobile performance: reduce animation complexity
+@media (max-width: 768px) {
+
+    // Shorter durations for snappier feel
+    .education__box,
+    .experience__card,
+    .skills__box {
+        animation-duration: 0.4s !important;
+    }
+
+    // Disable complex animations on low-end devices
+    @media (prefers-reduced-motion: no-preference) {
+        .button-pulse {
+            animation: none;
+        }
     }
 }

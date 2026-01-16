@@ -146,7 +146,7 @@
         display: inline-flex;
         align-items: center;
         gap: 1rem;
-        font-size: 1.3rem;
+        font-size: clamp(1.2rem, 2vw, 1.3rem);
         font-weight: 600;
         text-transform: uppercase;
         color: currentColor;
@@ -181,6 +181,76 @@
 
         &:active {
             transform: translateY(-1px);
+        }
+    }
+}
+
+// Mobile Optimizations
+@media (max-width: 768px) {
+    .card {
+        max-height: 50rem;
+        aspect-ratio: 4 / 5;
+
+        &__background {
+            padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 2.5rem);
+        }
+
+        &__heading {
+            font-size: clamp(2.2rem, 5vw, 2.8rem);
+            letter-spacing: 0.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        &__link {
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            min-height: var(--touch-target-min);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        max-height: 45rem;
+
+        &__background {
+            padding: 2rem 1.5rem;
+        }
+
+        &__heading {
+            font-size: 2rem;
+            letter-spacing: 0.2rem;
+        }
+
+        &__link {
+            padding: 1rem 2rem;
+            gap: 0.8rem;
+        }
+    }
+}
+
+// Touch device optimizations  
+@media (hover: none) and (pointer: coarse) {
+    .card {
+        &:hover {
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15),
+                0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            transform: none;
+        }
+
+        &:active {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.2);
+        }
+
+        &:hover &__image {
+            transform: none;
+            filter: brightness(0.85) contrast(1.1);
+        }
+
+        &:active &__image {
+            transform: scale(1.05);
+            filter: brightness(1) contrast(1.15);
         }
     }
 }

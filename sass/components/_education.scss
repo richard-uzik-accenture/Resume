@@ -109,8 +109,19 @@
             transform: translateX(-50%);
             box-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
 
-            @media (max-width: 768px) {
+            @media (max-width: 1024px) {
                 left: 3rem;
+                transform: none;
+                width: 3px;
+            }
+
+            @media (max-width: 768px) {
+                left: 2.4rem;
+                width: 2px;
+            }
+
+            @media (max-width: 480px) {
+                display: none;
             }
         }
     }
@@ -208,8 +219,21 @@
         z-index: 3;
         animation: pulse-dot 2s ease-in-out infinite;
 
+        @media (max-width: 1024px) {
+            width: 2rem;
+            height: 2rem;
+            top: 2.5rem;
+        }
+
         @media (max-width: 768px) {
-            left: 2.4rem;
+            width: 1.6rem;
+            height: 1.6rem;
+            top: 2rem;
+            border-width: 3px;
+        }
+
+        @media (max-width: 480px) {
+            display: none;
         }
     }
 
